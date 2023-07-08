@@ -1,0 +1,104 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F2F2F2;
+    padding: 20px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+select,
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+button[type="submit"] {
+    background-color: #02403A;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+}
+
+button[type="submit"]:hover {
+    background-color: #165953;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+}
+
+
+.button {
+    display: inline-block;
+    background-color: #02403A;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    float: right; /* Añadido */
+    margin-top: 20px; /* Añadido */
+}
+
+.button:hover {
+    background-color: #165953;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+#borrar-datos {
+    display: inline-block;
+    background-color: #02403A;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    float: right; /* Añadido */
+    margin-top: 20px; /* Añadido */
+    margin-left: 5px; /* Añadido */
+}
+
+#borrar-datos:hover {
+    background-color: #165953;
+}

@@ -1,0 +1,108 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #F2F2F2;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.citas-list {
+    margin-bottom: 20px;
+}
+
+.cita {
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 30px; /* Aumenta el margen inferior para dar espacio a los botones */
+    position: relative;
+}
+
+.cita-info {
+    margin-bottom: 10px;
+    padding-bottom: 40px; /* Agrega un espacio adicional para los botones */
+}
+
+.cita-actions {
+    text-align: right;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+button.confirmar {
+    background-color: #008000;
+}
+
+button.cancelar {
+    background-color: #FF0000;
+}
+
+button.reprogramar {
+    background-color: #FFA500;
+}
+
+button.modificar {
+    background-color: #00BFFF;
+}
+
+button.generar-informe {
+    background-color: #FF1493;
+}
+
+button.eliminar {
+    background-color: #FF4500;
+}
+
+.agendar-cita {
+    background-color: #02403A;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+    margin-top: 20px;
+    margin-right: 100px; /* Añade margen derecho para separar del borde de la página */
+}
+
+.agendar-cita:hover {
+    background-color: #165953;
+}
+
+.button {
+    display: inline-block;
+    background-color: #02403A;
+    color: #FFFFFF;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    float: right;
+    margin-top: 20px;
+    margin-left: 5px;
+}
+
+.button:hover {
+    background-color: #165953;
+}
+
+.form-group {
+    text-align: right;
+}
