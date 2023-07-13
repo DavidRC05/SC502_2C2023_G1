@@ -749,7 +749,7 @@ strong {
   border-radius: 40px;
   padding: 10px 100px;
   border: none;
-  background-color: var(--dark-color);
+  background-color: var(--primary-color);
   color: var(--section-bg-color);
   margin-top: 30px;
 }
@@ -833,7 +833,7 @@ strong {
   border-radius: 40px;
   padding: 10px 100px;
   border: none;
-  background-color: var(--dark-color);
+  background-color: var(--primary-color);
   color: var(--section-bg-color);
 }
 
