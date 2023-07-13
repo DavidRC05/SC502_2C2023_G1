@@ -1,75 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Reserva de cita con nosotros</title>
-    <link rel="stylesheet" href="Stylecitas.css">
+    <link rel="stylesheet" href="css/Stylecitas.css" />
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <script src="scriptcitas.js"></script>
-</head>
+    <script src="js/scriptcitas.js"></script>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h2>Agenda tu cita con nosotros</h2>
-        <form id="booking-form" action="procesar_reserva.php" method="POST">
-            <div class="form-group">
-                <label for="name">Nombres:</label>
-                <input type="text" id="name" name="name" required>
-            </div>
-            <div class="form-group">
-                <label for="last-name">Apellidos:</label>
-                <input type="text" id="last-name" name="last-name" required>
-            </div>
-            <div class="form-group">
-                <label for="cedula">Cédula:</label>
-                <input type="text" id="cedula" name="cedula" required>
-            </div>
-            <div class="form-group">
-                <label for="phone">Teléfono:</label>
-                <input type="tel" id="phone" name="phone" required>
-            </div>
-            <div class="form-group">
-                <label for="date">Fecha de cita:</label>
-                <input type="date" id="date" name="date" required>
-            </div>
-            <div class="form-group">
-                <label for="time">Hora de cita:</label>
-                <select id="time" name="time" required>
-                    <option value="">Seleccionar hora</option>
-                    <option value="08:00">08:00 AM</option>
-                    <option value="09:00">09:00 AM</option>
-                    <option value="10:00">10:00 AM</option>
-                    <option value="11:00">11:00 AM</option>
-                    <option value="12:00">12:00 PM</option>
-                    <option value="13:00">01:00 PM</option>
-                    <option value="14:00">02:00 PM</option>
-                    <option value="15:00">03:00 PM</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="service">Servicio:</label>
-                <select id="service" name="service" required>
-                    <option value="">Seleccionar servicio</option>
-                    <option value="Servicio 1">Servicio 1</option>
-                    <option value="Servicio 2">Servicio 2</option>
-                    <option value="Servicio 3">Servicio 3</option>
-                    <option value="Servicio 4">Servicio 4</option>
-                </select>
-            </div>
-            <div class="form-group">
-                <label for="message">Mensaje adicional:</label>
-                <textarea id="message" name="message" rows="4"></textarea>
-            </div>
-            <button type="submit" id="agendar-cita">Agendar cita</button>
-            <button type="button" id="borrar-datos">Borrar datos</button>
-        </form>
+      <h2>Agenda tu cita con nosotros</h2>
+      <form id="booking-form" action="procesar_reserva.php" method="POST">
+        <div class="form-group">
+          <label for="name">Nombres:</label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="last-name">Apellidos:</label>
+          <input type="text" id="last-name" name="last-name" required />
+        </div>
+        <div class="form-group">
+          <label for="cedula">Cédula:</label>
+          <input type="text" id="cedula" name="cedula" required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Teléfono:</label>
+          <input type="tel" id="phone" name="phone" required />
+        </div>
+        <div class="form-group">
+          <label for="date">Fecha de cita:</label>
+          <input type="date" id="date" name="date" required />
+        </div>
+        <div class="form-group">
+          <label for="time">Hora de cita:</label>
+          <select id="time" name="time" required>
+            <option value="">Seleccionar hora</option>
+            <option value="08:00">08:00 AM</option>
+            <option value="09:00">09:00 AM</option>
+            <option value="10:00">10:00 AM</option>
+            <option value="11:00">11:00 AM</option>
+            <option value="12:00">12:00 PM</option>
+            <option value="13:00">01:00 PM</option>
+            <option value="14:00">02:00 PM</option>
+            <option value="15:00">03:00 PM</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="service">Servicio:</label>
+          <select id="service" name="service" required>
+            <option value="">Seleccionar servicio</option>
+            <option value="Servicio 1">Servicio 1</option>
+            <option value="Servicio 2">Servicio 2</option>
+            <option value="Servicio 3">Servicio 3</option>
+            <option value="Servicio 4">Servicio 4</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Mensaje adicional:</label>
+          <textarea id="message" name="message" rows="4"></textarea>
+        </div>
+        <button type="submit" id="agendar-cita">Agendar cita</button>
+        <button type="button" id="borrar-datos">Borrar datos</button>
+      </form>
     </div>
 
     <div class="form-group">
-        <a href="index.html" class="button">Volver al menú principal</a>
+      <a href="index.html" class="button">Volver al menú principal</a>
     </div>
-</body>
-
+  </body>
 </html>
