@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     const buttonBorrarDatos = document.getElementById('borrar-datos');
     
@@ -30,12 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
         const lastName = document.getElementById('last-name').value;
         const cedula = document.getElementById('cedula').value;
         const phone = document.getElementById('phone').value;
-        const date = document.getElementById('date').value;
-        const time = document.getElementById('time').value;
+        const date = document.getElementById('datetime').value;
+       
         const service = document.getElementById('service').value;
-        const message = document.getElementById('message').value;
         
-        const messageText = `Nombres: ${name}\nApellidos: ${lastName}\nCédula: ${cedula}\nTeléfono: ${phone}\nFecha de cita: ${date}\nHora de cita: ${time}\nServicio: ${service}\nMensaje adicional: ${message}`;
+        
+        const messageText = `Nombres: ${name}\nApellidos: ${lastName}\nCédula: ${cedula}\nTeléfono: ${phone}\nFecha de cita: ${datetime}\nServicio: ${service}`;
         
         Swal.fire({
             title: 'Confirmar',
@@ -53,3 +54,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 });
+
+
+
