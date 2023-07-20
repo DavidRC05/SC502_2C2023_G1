@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -34,11 +37,10 @@
     <main>
         <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
             <div class="container">
-                <a class="navbar-brand mx-auto d-lg-none" href="index.html">Clinic Care<strong class="d-block">Expertos
+                <a class="navbar-brand mx-auto d-lg-none" href="index.php">Clinic Care<strong class="d-block">Expertos
                         en Estetica</strong></a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
@@ -56,29 +58,81 @@
                             <a class="nav-link" href="#services">Servicios</a>
                         </li>
 
+                        <?php if (!empty($_SESSION)) : ?>
+                            <a class="navbar-brand d-none d-lg-block" href="index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
+                        </a>
+                        <?php endif; ?>
+
                         <li class="nav-item">
                             <a class="nav-link" href="#reviews">Testimonios</a>
                         </li>
 
-                        <a class="navbar-brand d-none d-lg-block" href="index.html">Clinic Care<strong
-                            class="d-block">Expertos en Estetica</strong>
+                        <?php if (empty($_SESSION)) : ?>
+                            <a class="navbar-brand d-none d-lg-block" href="index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
                         </a>
+                        <?php endif; ?>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="./public/agendarCitas.html">Agendar Cita</a>
+                            <a class="nav-link" href="./public/agendarCitas.php">Agendar Cita</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="#contact">Contacto</a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="./public/login.html">Login</a>
-                        </li>
+                        <?php if (empty($_SESSION)) : ?>
+                            <li class="nav-item">
+                                <div class="ingresar-login-register me-1">
+                                    <a class="nav-link pt-2 pb-2 ps-3 pe-3 text-white ingresar-login-register" href="./public/login.php">Iniciar sesión</a>
+                                </div>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="./public/register.html">Registro</a>
-                        </li>
+                            <li class="nav-item">
+                                <div class="ingresar-login-register ">
+                                    <a class="nav-link pt-2 pb-2 ps-3 pe-3 text-white ingresar-login-register" href="./public/register.php">Registro</a>
+                                </div>
+                            </li>
+
+                        <?php endif; ?>
+
+                        <?php
+                        if (!empty($_SESSION)) {
+                            switch ($_SESSION['id_cargo']) {
+                                case 1:
+                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0">';
+                                    echo '<a class="btn btn-secondary me-3 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                                    echo $_SESSION['usuario'];
+                                    echo '<i class="bi bi-person-fill"></i>';
+                                    echo '</a>';
+
+                                    echo '<div class="dropdown-menu desplegar pe-2" aria-labelledby="dropdownMenuLink">';
+                                    echo '<div class="contenedor__texto">';
+                                    echo '<a class="text-white text-center desplegar__letra" href="public/dashboard.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
+                                    echo '</div>';
+                                    echo '<div class="contenedor__texto">';
+                                    echo '<a class="text-white text-center desplegar__letra" href="controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    break;
+                                case 2:
+                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0">';
+                                    echo '<a class="btn btn-secondary ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                                    echo $_SESSION['usuario'];
+                                    echo '<i class="bi bi-person-fill"></i>';
+                                    echo '</a>';
+
+                                    echo '<div class="dropdown-menu desplegar" aria-labelledby="dropdownMenuLink">';
+                                    echo '<div class="contenedor__texto">';
+                                    echo '<a class="text-white desplegar__letra" href="controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    break;
+                            }
+                        }
+                        ?>
+
                     </ul>
                 </div>
 
@@ -149,8 +203,7 @@
                     </div>
 
                     <div class="col-lg-4 col-md-5 col-12 mx-auto">
-                        <div
-                            class="featured-circle bg-white shadow-lg d-flex justify-content-center align-items-center">
+                        <div class="featured-circle bg-white shadow-lg d-flex justify-content-center align-items-center">
                             <p class="featured-text"><span class="featured-number">+22</span><br> Años de experiencia
                             </p>
                         </div>
@@ -165,13 +218,11 @@
                 <div class="row">
 
                     <div class="col-lg-6 ps-0 d-flex flex-column">
-                        <img src="./assets/images/gallery/ejemplo-tratamiento-cliniccare.jpg" class="img-fluid galleryImage"
-                            alt="Clinic Care" title="Clinic Care">
+                        <img src="./assets/images/gallery/ejemplo-tratamiento-cliniccare.jpg" class="img-fluid galleryImage" alt="Clinic Care" title="Clinic Care">
                     </div>
 
                     <div class="col-lg-6 ps-0 d-flex flex-column">
-                        <img src="./assets/images/gallery/Uñas.jpg" class="img-fluid galleryImage" alt="Clinic Care"
-                            title="Clinic Care">
+                        <img src="./assets/images/gallery/Uñas.jpg" class="img-fluid galleryImage" alt="Clinic Care" title="Clinic Care">
                     </div>
 
                 </div>
@@ -188,105 +239,38 @@
                             <h3 style="color: #02403A;">Rinomodelación</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
                                 saepe esse accusantium.</p>
-                            <a class="custom-link" href="#booking" data-hover="Agendar"
-                                style="margin-top: 10px;">Agendar</a>
+                            <a class="custom-link" href="#booking" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/cosmelan-clinic.jpg" alt="Servicio Cosmelan">
                             <h3 style="color: #02403A;">Cosmelan</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
                                 saepe esse accusantium.</p>
-                            <a class="custom-link" href="#booking" data-hover="Agendar"
-                                style="margin-top: 10px;">Agendar</a>
+                            <a class="custom-link" href="#booking" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/Botox.jpg" alt="Servicio Botox">
                             <h3 style="color: #02403A;">Botox</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
                                 saepe esse accusantium.</p>
-                            <a class="custom-link" href="#booking" data-hover="Agendar"
-                                style="margin-top: 10px;">Agendar</a>
+                            <a class="custom-link" href="#booking" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/hydrafacial-treatment.webp" alt="Servicio Hydrafacial">
                             <h3 style="color: #02403A;">Hydrafacial</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
                                 saepe esse accusantium.</p>
-                            <a class="custom-link" href="#booking" data-hover="Agendar"
-                                style="margin-top: 10px;">Agendar</a>
+                            <a class="custom-link" href="#booking" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
 
                     </section>
                 </div>
             </div>
         </section>
-        <!--Reviews de la Clinica-->
-        <section class="section-padding pb-0" id="reviews">
-            <div class="container">
-                <div class="row">
-                    <div class="col-12">
-                        <h2 class="text-center mb-lg-5 mb-4">¿Que dicen nuestros pacientes?</h2>
-                        <iframe src='https://widgets.sociablekit.com/google-reviews/iframe/154260' frameborder='0'
-                            width='100%' height='300'></iframe>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <!--Seccion para agendar cita-->
-        <section class="section-padding" id="booking">
-            <div class="container">
-                <div class="row">
+        <!--Reseñas de la Clinica-->
+        <section>
+            <h2 class="text-center mb-lg-5 mb-4">¿Que dicen nuestros pacientes?</h2>
 
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <div class="booking-form">
-
-                            <h2 class="text-center mb-lg-3 mb-2">Agenda una cita con nosotros</h2>
-
-                            <form role="form" action="#booking" method="get">
-                                <div class="row">
-                                    <div class="col-lg-6 col-12">
-                                        <input type="text" name="name" id="name" class="form-control"
-                                            placeholder="Nombre Completo" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12">
-                                        <input type="email" name="email" id="email" pattern="[^ @]*@[^ @]*"
-                                            class="form-control" placeholder="Email" required>
-                                    </div>
-
-                                    <div class="col-lg-6 col-12">
-                                        <input type="telephone" name="phone" id="phone" pattern="^\d{4}\d{4}$"
-                                            class="form-control" placeholder="Telefeno 1234 5678">
-                                    </div>
-
-                                    <div class="col-lg-6 col-12">
-                                        <select id="Servicio" name="servicios" class="form-control" required>
-                                            <option>Elige Servicio</option>
-                                            <option value="Rinomodelación">Rinomodelación</option>
-                                            <option value="Cosmelan">Cosmelan</option>
-                                            <option value="Botox">Botox</option>
-                                            <option value="Hydrafacial">Hydrafacial</option>
-                                        </select>
-                                    </div>
-                                    <div class="col-lg-6 col-12">
-                                        <input type="date" name="date" id="date" value="" class="form-control">
-                                    </div>
-                                    <div class="col-12">
-                                        <textarea class="form-control" rows="5" id="message" name="message"
-                                            placeholder="Mensaje Adicional"></textarea>
-                                    </div>
-                                    <div class="col-lg-3 col-md-4 col-6 mx-auto">
-                                        <button type="submit" class="form-control" id="submit-button"
-                                            value="Agendar">Agendar</button>
-                                    </div>
-                                </div>
-                            </form>
-
-                        </div>
-                    </div>
-
-                </div>
-            </div>
         </section>
 
     </main>
@@ -324,14 +308,11 @@
                 <div class="col-lg-3 col-md-6 col-12 ms-auto">
                     <h5 class="mb-lg-4 mb-3">Redes Sociales</h5>
                     <ul class="social-icon">
-                        <li><a href="https://www.facebook.com/cliniccarecr/" class="social-icon-link bi-facebook"
-                                target="_blank"></a></li>
-                        <li><a href="https://api.whatsapp.com/send?phone=50672077328"
-                                class="social-icon-link bi-whatsapp" target="_blank"></a></li>
-                        <li><a href="https://www.instagram.com/cliniccarecr/" class="social-icon-link bi-instagram"
-                                target="_blank"></a></li>
+                        <li><a href="https://www.facebook.com/cliniccarecr/" class="social-icon-link bi-facebook" target="_blank"></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=50672077328" class="social-icon-link bi-whatsapp" target="_blank"></a></li>
+                        <li><a href="https://www.instagram.com/cliniccarecr/" class="social-icon-link bi-instagram" target="_blank"></a></li>
                     </ul>
-                    <a href="public/Trabajo/Trabaj.html">Trabaja con nosotros</a>
+                    <a href="public/Trabajo/trabajos.php">Trabaja con nosotros</a>
                 </div>
                 <div class="col-lg-3 col-12 ms-auto mt-4 mt-lg-0">
                     <p class="copyright-text">Copyright © Clinic Care
@@ -345,6 +326,15 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/owl.carousel@2.3.4/dist/owl.carousel.min.js"></script>
+    <!-- JavaScript de jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <!-- JavaScript de Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
     <script src="js/script.js"></script>
 </body>
 

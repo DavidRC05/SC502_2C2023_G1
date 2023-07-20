@@ -33,7 +33,7 @@
     <main>
         <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
             <div class="container">
-                <a class="navbar-brand mx-auto d-lg-none" href="index.html">Clinic Care<strong class="d-block">Expertos
+                <a class="navbar-brand mx-auto d-lg-none" href="index.php">Clinic Care<strong class="d-block">Expertos
                         en Estetica</strong></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -44,39 +44,39 @@
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html">Inicio</a>
+                            <a class="nav-link" href="../../index.php">Inicio</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html#about">Sobre Nosotros</a>
+                            <a class="nav-link" href="../../index.php#about">Sobre Nosotros</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html#services">Servicios</a>
+                            <a class="nav-link" href="../../index.php#services">Servicios</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html#reviews">Testimonios</a>
+                            <a class="nav-link" href="../../index.php#reviews">Testimonios</a>
                         </li>
 
-                        <a class="navbar-brand d-none d-lg-block" href="../index.html">Clinic Care<strong
+                        <a class="navbar-brand d-none d-lg-block" href="../../index.php">Clinic Care<strong
                                 class="d-block">Expertos en Estetica</strong>
                         </a>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html#booking">Agendar Cita</a>
+                            <a class="nav-link" href="../../index.php#booking">Agendar Cita</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../index.html#contact">Contacto</a>
+                            <a class="nav-link" href="../../index.php#contact">Contacto</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../public/login.html">Login</a>
+                            <a class="nav-link" href="../../public/login.php">Login</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../public/register.html">Registro</a>
+                            <a class="nav-link" href="../../public/register.php">Registro</a>
                         </li>
                     </ul>
                 </div>
@@ -109,7 +109,7 @@
                                         the
                                         bulk of the card's content.</p>
                                         
-                                    <a href="Descripcion/recepcionista.html" class="btn alt ">Aplicar</a>
+                                    <a href="Descripcion/recepcionista.php" class="btn alt ">Aplicar</a>
                                 </div>
                             </div>
 
@@ -122,7 +122,7 @@
                                     <p class="card-text">Some quick example text to build on the card title and make up
                                         the
                                         bulk of the card's content.</p>
-                                    <a href="Descripcion/asistente.html" class="btn alt ">Aplicar</a>
+                                    <a href="Descripcion/asistente.php" class="btn alt ">Aplicar</a>
                                 </div>
                             </div>
 
@@ -135,7 +135,7 @@
                                     <p class="card-text">Some quick example text to build on the card title and make up
                                         the
                                         bulk of the card's content.</p>
-                                    <a href="Descripcion/ComunityM.html" class="btn alt">Aplicar</a>
+                                    <a href="Descripcion/ComunityM.php" class="btn alt">Aplicar</a>
                                 </div>
                             </div>
 

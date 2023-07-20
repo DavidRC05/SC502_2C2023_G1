@@ -1,0 +1,45 @@
+--Script para las funciones de registro y login
+
+A la hora de crear el esquema hay que ponerle clinica como recomendacion
+
+
+--Tabla para los roles 
+CREATE TABLE cargos (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  rol VARCHAR(50)
+);
+
+--Tabla para los usuarios
+CREATE TABLE usuarios (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre VARCHAR(100),
+  usuario VARCHAR(50) UNIQUE,
+  contraseña VARCHAR(50),
+  id_cargo INT,
+  email VARCHAR(100),
+  FOREIGN KEY (id_cargo) REFERENCES cargos (id)
+);
+
+--roles de tabla (Que tengan el mismo orden)
+--1 para admin
+--2 para cliente
+--3 para secretario
+INSERT INTO cargos (rol) VALUES
+('Administrador'),
+('Cliente'),
+('Secretario');
+
+
+--Ejemplos
+
+--Usuario de admin
+INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES
+('Admin', 'Admin', '12345', 1, 'admin@gmail.com');
+
+--Ejemplo de cliente
+INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES
+('Cliente', 'Cliente', '12345', 2, 'cliente@gmail.com');
+
+--Usuario de Secretario
+INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES
+('Secretario', 'Secretario', '12345', 3, 'secre@gmail.com');

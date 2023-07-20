@@ -49,14 +49,14 @@
         </div>
       </div>
       <div class="agendar-cita-container">
-        <a href="./agendarCitas.html" class="button agendar-cita"
+        <a href="./agendarCitas.php" class="button agendar-cita"
           >Agendar nueva cita</a
         >
       </div>
     </div>
 
     <div class="form-group">
-      <a href="../index.html" class="button">Volver al menú principal</a>
+      <a href="../index.php" class="button">Volver al menú principal</a>
     </div>
     <script src="../js/scriptCitasAdminitrador.js"></script>
   </body>

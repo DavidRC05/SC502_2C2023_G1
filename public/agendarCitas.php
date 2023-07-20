@@ -28,7 +28,7 @@
       <main>
           <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
               <div class="container">
-                  <a class="navbar-brand mx-auto d-lg-none" href="index.html">Clinic Care<strong class="d-block">Expertos
+                  <a class="navbar-brand mx-auto d-lg-none" href="index.php">Clinic Care<strong class="d-block">Expertos
                           en Estetica</strong></a>
   
                   <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -39,7 +39,7 @@
                   <div class="collapse navbar-collapse" id="navbarNav">
                       <ul class="navbar-nav mx-auto">
                           <li class="nav-item active">
-                              <a class="nav-link" href="../index.html">Inicio</a>
+                              <a class="nav-link" href="../index.php">Inicio</a>
                           </li>
   
                           <li class="nav-item">
@@ -54,12 +54,12 @@
                               <a class="nav-link" href="#reviews">Testimonios</a>
                           </li>
   
-                          <a class="navbar-brand d-none d-lg-block" href="../index.html">Clinic Care<strong
+                          <a class="navbar-brand d-none d-lg-block" href="../index.php">Clinic Care<strong
                               class="d-block">Expertos en Estetica</strong>
                           </a>
   
                           <li class="nav-item">
-                              <a class="nav-link" href="./agendarCitas.html">Agendar Cita</a>
+                              <a class="nav-link" href="./agendarCitas.php">Agendar Cita</a>
                           </li>
   
                           <li class="nav-item">
@@ -67,11 +67,11 @@
                           </li>
   
                           <li class="nav-item">
-                              <a class="nav-link" href="./login.html">Login</a>
+                              <a class="nav-link" href="./login.php">Login</a>
                           </li>
   
                           <li class="nav-item">
-                              <a class="nav-link" href="./register.html">Registro</a>
+                              <a class="nav-link" href="./register.php">Registro</a>
                           </li>
                       </ul>
                   </div>

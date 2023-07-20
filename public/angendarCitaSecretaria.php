@@ -43,7 +43,7 @@
     </div>
 
     <div class="form-group">
-      <a href="../index.html" class="button">Volver al menú principal</a>
+      <a href="../index.php" class="button">Volver al menú principal</a>
     </div>
 
     <script src="../js/scriptCitasSecretaria.js"></script>

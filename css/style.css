@@ -446,36 +446,6 @@ strong {
 }
 
 /*---------------------------------------
-  BOOKING FORM            
------------------------------------------*/
-
-.booking-form .form-control {
-  background: transparent;
-  border-radius: 0;
-  border: 0;
-  border-bottom: 1px solid var(--border-color);
-  color: #6c757d;
-  font-weight: var(--font-weight-normal);
-  padding-top: 12px;
-  padding-bottom: 12px;
-  margin-top: 15px;
-  transition: all 0.3s;
-}
-
-.booking-form #submit-button {
-  background: var(--dark-color);
-  border-bottom: 0;
-  font-weight: var(--font-weight-semibold);
-  color: var(--white-color);
-  text-transform: uppercase;
-  margin-top: 35px;
-}
-
-.booking-form #submit-button:hover {
-  background: var(--primary-color);
-}
-
-/*---------------------------------------
   FOOTER              
 -----------------------------------------*/
 .site-footer {
@@ -590,36 +560,6 @@ strong {
   }
 }
 
-@media screen and (max-width: 767px) {
-  .heroText {
-    padding: 1.5rem;
-  }
-
-  .animated-info {
-    min-width: 125px;
-  }
-
-  .featured-circle {
-    margin-top: 20px;
-  }
-
-  .reviews-carousel .owl-nav {
-    position: relative;
-    width: auto !important;
-    transform: inherit;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    max-width: 100px;
-    margin: 20px auto;
-  }
-
-  .reviews-carousel .owl-nav .owl-prev,
-  .reviews-carousel .owl-nav .owl-next {
-    right: 0;
-    left: 0;
-  }
-}
 
 @media screen and (max-width: 480px) {
   .heroText {
@@ -635,30 +575,6 @@ strong {
 
   .contact-phone {
     font-size: 12px;
-  }
-}
-
-@media screen and (max-width: 360px) {
-  .featured-number {
-    font-size: 5rem;
-  }
-
-  .featured-circle {
-    width: 235px;
-    height: 235px;
-  }
-
-  .reviews-image {
-    width: 55px !important;
-    height: 55px !important;
-  }
-
-  .reviews-thumb figcaption {
-    font-size: var(--menu-font-size);
-  }
-
-  .timeline::before {
-    left: 42px;
   }
 }
 
@@ -851,7 +767,58 @@ strong {
   height: 100%;
 }
 
+/* DropDown de usuario*/
 
+.btn:hover{
+  background-color: var(--primary-color);
+}
+
+.ingresar-login-register{
+  font-family: var(--body-font-family);
+  background-color: var(--primary-color);
+  border-radius: 5px;
+  font-size: 15px;
+  margin-top: 9px;
+}
+
+.ingresar{
+  font-family: var(--body-font-family);
+  background-color: var(--primary-color);
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+.desplegar{
+  background-color: var(--title-color);
+  padding: 4px 0;
+  width: 80px !important;
+}
+
+
+.desplegar__letra{
+  font-size: 13px;
+  font-family: var(--body-font-family);
+  font-weight: lighter;
+}
+
+.contenedor__texto{
+  display: flex;
+  justify-content: center;
+  border-top: .5 solid var(--white-color);
+  width: 65%;
+}
+
+
+.mensaje{
+  font-size: 10px;
+  background-color: var(--border-color);
+  color: var(--white-color);
+  padding: 5px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  font-family:  var(--body-font-family);
+}
 
 
 
