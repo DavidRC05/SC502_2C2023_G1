@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="en">
 
@@ -33,54 +36,103 @@
     <main>
         <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
             <div class="container">
-                <a class="navbar-brand mx-auto d-lg-none" href="index.php">Clinic Care<strong class="d-block">Expertos
+                <a class="navbar-brand mx-auto d-lg-none" href="../../../index.php">Clinic Care<strong class="d-block">Expertos
                         en Estetica</strong></a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../index.php#hero">Inicio</a>
+                        <li class="nav-item active">
+                            <a class="nav-link" href="../../../index.php">Inicio</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../index.php#about">Sobre Nosotros</a>
+                            <a class="nav-link" href="#about">Sobre Nosotros</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../index.php#services">Servicios</a>
+                            <a class="nav-link" href="#services">Servicios</a>
+                        </li>
+
+                        <?php if (!empty($_SESSION)) : ?>
+                            <a class="navbar-brand d-none d-lg-block" href="../../../index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
+                            </a>
+                        <?php endif; ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="#reviews">Testimonios</a>
+                        </li>
+
+                        <?php if (empty($_SESSION)) : ?>
+                            <a class="navbar-brand d-none d-lg-block" href="../../../index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
+                            </a>
+                        <?php endif; ?>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="../../agendarCitas.php">Agendar Cita</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../../../index.php#reviews">Testimonios</a>
+                            <a class="nav-link" href="#contact">Contacto</a>
                         </li>
 
-                        <a class="navbar-brand d-none d-lg-block" href="../index.php">Clinic Care<strong
-                                class="d-block">Expertos en Estetica</strong>
-                        </a>
+                        <?php if (empty($_SESSION)) : ?>
+                            <li class="nav-item">
+                                <div class="ingresar-login-register me-1">
+                                    <a class="nav-link pt-2 pb-2 ps-3 pe-3 text-white ingresar-login-register" href="../../login.php">Iniciar sesión</a>
+                                </div>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../index.php#booking">Agendar Cita</a>
-                        </li>
+                            <li class="nav-item">
+                                <div class="ingresar-login-register ">
+                                    <a class="nav-link pt-2 pb-2 ps-3 pe-3 text-white ingresar-login-register" href="../../login.php">Registro</a>
+                                </div>
+                            </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../index.php#contact">Contacto</a>
-                        </li>
+                        <?php endif; ?>
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../public/login.php">Login</a>
-                        </li>
+                        <?php
+                        if (!empty($_SESSION)) {
+                            switch ($_SESSION['id_cargo']) {
+                                case 1:
+                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0 me-3">';
+                                    echo '<a class="btn btn-secondary me-3 pt-0 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                                    echo $_SESSION['usuario'];
+                                    echo '<i class="bi bi-person-fill"></i>';
+                                    echo '</a>';
 
-                        <li class="nav-item">
-                            <a class="nav-link" href="../../../public/register.php">Registro</a>
-                        </li>
+                                    echo '<div class="dropdown-menu desplegar pe-2" aria-labelledby="dropdownMenuLink">';
+                                    echo '<div class="contenedor__texto">';
+                                    echo '<a class="text-white text-center desplegar__letra " href="../../dashboard.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
+                                    echo '</div>';
+                                    echo '<div class="contenedor__texto">';
+                                    echo '<a class="text-white text-center desplegar__letra" href="../../../controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    break;
+                                case 2:
+                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0 me-3">';
+                                    echo '<a class="btn btn-secondary me-3 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                                    echo $_SESSION['usuario'];
+                                    echo '<i class="bi bi-person-fill"></i>';
+                                    echo '</a>';
+
+                                    echo '<div class="dropdown-menu desplegar" aria-labelledby="dropdownMenuLink">';
+                                    echo '<div class="contenedor__texto ">';
+                                    echo '<a class="text-white desplegar__letra" href="../../../controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    break;
+                            }
+                        }
+                        ?>
                     </ul>
                 </div>
-
             </div>
         </nav>
 
@@ -114,7 +166,7 @@
                 </ul>
                 <a href="#" class="dboton">Aplicar</a>
         </section>
-        
+
 
 
         <!--Imagen-->
@@ -160,12 +212,9 @@
                 <div class="col-lg-3 col-md-6 col-12 ms-auto">
                     <h5 class="mb-lg-4 mb-3">Redes Sociales</h5>
                     <ul class="social-icon">
-                        <li><a href="https://www.facebook.com/cliniccarecr/" class="social-icon-link bi-facebook"
-                                target="_blank"></a></li>
-                        <li><a href="https://api.whatsapp.com/send?phone=50672077328"
-                                class="social-icon-link bi-whatsapp" target="_blank"></a></li>
-                        <li><a href="https://www.instagram.com/cliniccarecr/" class="social-icon-link bi-instagram"
-                                target="_blank"></a></li>
+                        <li><a href="https://www.facebook.com/cliniccarecr/" class="social-icon-link bi-facebook" target="_blank"></a></li>
+                        <li><a href="https://api.whatsapp.com/send?phone=50672077328" class="social-icon-link bi-whatsapp" target="_blank"></a></li>
+                        <li><a href="https://www.instagram.com/cliniccarecr/" class="social-icon-link bi-instagram" target="_blank"></a></li>
                     </ul>
 
                 </div>
@@ -182,6 +231,14 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
+    <!-- JavaScript de jQuery -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+
+    <!-- JavaScript de Popper.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+
+    <!-- JavaScript de Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 </body>
 

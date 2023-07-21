@@ -37,7 +37,7 @@ session_start();
     <main>
         <nav class="navbar navbar-expand-lg bg-light fixed-top shadow-lg">
             <div class="container">
-                <a class="navbar-brand mx-auto d-lg-none" href="index.php">Clinic Care<strong class="d-block">Expertos
+                <a class="navbar-brand mx-auto d-lg-none" href="../index.php">Clinic Care<strong class="d-block">Expertos
                         en Estetica</strong></a>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -47,29 +47,29 @@ session_start();
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="#hero">Inicio</a>
+                            <a class="nav-link" href="../index.php">Inicio</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#about">Sobre Nosotros</a>
+                            <a class="nav-link" href="../index.php">Sobre Nosotros</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#services">Servicios</a>
+                            <a class="nav-link" href="../index.php">Servicios</a>
                         </li>
 
                         <?php if (!empty($_SESSION)) : ?>
-                            <a class="navbar-brand d-none d-lg-block" href="index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
-                        </a>
+                            <a class="navbar-brand d-none d-lg-block" href="../index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
+                            </a>
                         <?php endif; ?>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#reviews">Testimonios</a>
+                            <a class="nav-link" href="../index.php">Testimonios</a>
                         </li>
 
                         <?php if (empty($_SESSION)) : ?>
                             <a class="navbar-brand d-none d-lg-block" href="index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
-                        </a>
+                            </a>
                         <?php endif; ?>
 
                         <li class="nav-item">
@@ -77,7 +77,7 @@ session_start();
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="#contact">Contacto</a>
+                            <a class="nav-link" href="../index.php">Contacto</a>
                         </li>
 
                         <?php if (empty($_SESSION)) : ?>
@@ -99,7 +99,7 @@ session_start();
                         if (!empty($_SESSION)) {
                             switch ($_SESSION['id_cargo']) {
                                 case 1:
-                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0">';
+                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0 me-3">';
                                     echo '<a class="btn btn-secondary me-3 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
                                     echo $_SESSION['usuario'];
                                     echo '<i class="bi bi-person-fill"></i>';
@@ -116,8 +116,8 @@ session_start();
                                     echo '</div>';
                                     break;
                                 case 2:
-                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0">';
-                                    echo '<a class="btn btn-secondary ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0 me-3">';
+                                    echo '<a class="btn btn-secondary me-3 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
                                     echo $_SESSION['usuario'];
                                     echo '<i class="bi bi-person-fill"></i>';
                                     echo '</a>';
@@ -132,7 +132,6 @@ session_start();
                             }
                         }
                         ?>
-
                     </ul>
                 </div>
 
