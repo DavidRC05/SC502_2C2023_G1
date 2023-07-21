@@ -99,7 +99,7 @@ session_start();
                             switch ($_SESSION['id_cargo']) {
                                 case 1:
                                     echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0 me-3">';
-                                    echo '<a class="btn btn-secondary me-3 pt-0 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                                    echo '<a class="btn btn-secondary me-3 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
                                     echo $_SESSION['usuario'];
                                     echo '<i class="bi bi-person-fill"></i>';
                                     echo '</a>';
