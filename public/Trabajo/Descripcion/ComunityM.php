@@ -106,7 +106,7 @@ session_start();
 
                                     echo '<div class="dropdown-menu desplegar pe-2" aria-labelledby="dropdownMenuLink">';
                                     echo '<div class="contenedor__texto">';
-                                    echo '<a class="text-white text-center desplegar__letra " href="../../dashboard.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
+                                    echo '<a class="text-white text-center desplegar__letra " href="../../Admin/dashboard.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
                                     echo '</div>';
                                     echo '<div class="contenedor__texto">';
                                     echo '<a class="text-white text-center desplegar__letra" href="../../../controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
@@ -164,7 +164,15 @@ session_start();
                         Ingles
                     </li>
                 </ul>
-                <a href="#" class="dboton">Aplicar</a>
+                <form action="guardar_archivo.php" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="cv" class="custom-file-upload">Tu curriculum:</label>
+                        <input type="file" id="cv" name="cv" placeholder="Subir CV" accept=".pdf,.doc,.docx">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn-trabajos mt-2">Aplicar</button>
+                    </div>
+                </form>
         </section>
 
 

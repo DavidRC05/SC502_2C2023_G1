@@ -61,6 +61,7 @@
 	font-weight: 400;
 	padding: 10px 150px;
 	font-family: var(--body-font-family);
+	border: none;
 }
 
 .btn-trabajos:hover{
@@ -116,13 +117,10 @@ body.landing #job_main {
 	margin-top: 50px;
   }
 
-  .imagen-recep{
-	width: 100%;
-  }
   
   .imagen-recep img {
-	width: 100%;
-	height: 100%;
+	max-width: 100%;
+    height: auto;
   }
   
   .container_titulod {

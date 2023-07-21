@@ -20,7 +20,7 @@ if (!empty($_POST["btningresar"])) {
             // Redirigir según el rol
             switch ($id_rol) {
                 case 1: // Administrador
-                    header("Location: dashboard.php");
+                    header("Location: admin/dashboard.php");
                     break;
                 case 2: // Cliente
                     header("Location: ../index.php");
@@ -39,4 +39,3 @@ if (!empty($_POST["btningresar"])) {
         echo 'Campos vacíos';
     }
 }
-?>

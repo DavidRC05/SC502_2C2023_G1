@@ -37,20 +37,20 @@ if ($_SESSION['id_cargo'] != 1) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.min.css" />
-  <link rel="stylesheet" href="../css/dashboard.css" />
+  <link rel="stylesheet" href="../../css/dashboard.css" />
 </head>
 
 <body>
   <main class="dashboard">
     <div class="contenido-sidebar">
-    <?php if (!empty($_SESSION)) : ?>
-          <div class="navbar-text fs-6 position-absolute top-0 end-0 sesion p-2 m-2">
-            <?php echo $_SESSION['usuario']; ?>
-            <i class="bi bi-person-fill"></i>
-          </div>
-        <?php endif; ?>
+      <?php if (!empty($_SESSION)) : ?>
+        <div class="navbar-text fs-6 position-absolute top-0 end-0 sesion p-2 m-2">
+          <?php echo $_SESSION['usuario']; ?>
+          <i class="bi bi-person-fill"></i>
+        </div>
+      <?php endif; ?>
       <div class="contenedor-imagen-dash">
-        <img class="imagen-dashboard" src="../assets/images/gallery/Logo-dashboard.png" alt="" />
+        <img class="imagen-dashboard" src="../../assets/images/gallery/Logo-dashboard.png" alt="" />
       </div>
       <aside class="sidebar">
         <div class="enlace-sidebar">
@@ -74,7 +74,7 @@ if ($_SESSION['id_cargo'] != 1) {
 
       </aside>
       <div class="dash-bajo">
-        <a class="text-white" href="../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
+        <a class="text-white" href="../../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
       </div>
     </div>
     <!--sidebar-->

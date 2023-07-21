@@ -106,7 +106,7 @@ session_start();
 
                                     echo '<div class="dropdown-menu desplegar pe-2" aria-labelledby="dropdownMenuLink">';
                                     echo '<div class="contenedor__texto">';
-                                    echo '<a class="text-white text-center desplegar__letra " href="../../dashboard.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
+                                    echo '<a class="text-white text-center desplegar__letra " href="../../Admin/dashboard.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
                                     echo '</div>';
                                     echo '<div class="contenedor__texto">';
                                     echo '<a class="text-white text-center desplegar__letra" href="../../../controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
@@ -143,10 +143,10 @@ session_start();
         <h2>Clinic Care Jobs</h2>
     </section>
 
-    <div class="container_recep">
+    <div class="container_recep h-100">
         <!-- Descripcion -->
         <section id="description">
-            <div class="col-lg-8 col-12 mx-auto">
+            <div class="col-lg-8 col-12 mx-auto h-100">
                 <h4 class="titulod">Asistente</h4>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
                     rerum aspernatur quaerat. Quidem unde quo esse voluptate.
@@ -164,7 +164,17 @@ session_start();
                         Ingles
                     </li>
                 </ul>
-                <a href="#" class="dboton">Aplicar</a>
+                <form action="guardar_archivo.php" method="post" enctype="multipart/form-data">
+                    <div>
+                        <label for="cv" class="custom-file-upload">Tu curriculum:</label>
+                        <input type="file" id="cv" name="cv" placeholder="Subir CV" accept=".pdf,.doc,.docx">
+                    </div>
+                    <div class="d-flex justify-content-center">
+                        <button type="submit" class="btn-trabajos mt-2">Aplicar</button>
+                    </div>
+                </form>
+            </div>
+
         </section>
 
 

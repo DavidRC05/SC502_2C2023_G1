@@ -106,10 +106,10 @@ session_start();
 
                                     echo '<div class="dropdown-menu desplegar pe-2" aria-labelledby="dropdownMenuLink">';
                                     echo '<div class="contenedor__texto">';
-                                    echo '<a class="text-white text-center desplegar__letra " href="public/dashboard.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
+                                    echo '<a class="text-white text-center desplegar__letra " href="../Admin/dashboard.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
                                     echo '</div>';
                                     echo '<div class="contenedor__texto">';
-                                    echo '<a class="text-white text-center desplegar__letra" href="../controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
+                                    echo '<a class="text-white text-center desplegar__letra" href="../../controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
                                     echo '</div>';
                                     echo '</div>';
                                     echo '</div>';
@@ -123,7 +123,7 @@ session_start();
 
                                     echo '<div class="dropdown-menu desplegar" aria-labelledby="dropdownMenuLink">';
                                     echo '<div class="contenedor__texto ">';
-                                    echo '<a class="text-white desplegar__letra" href="../controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
+                                    echo '<a class="text-white desplegar__letra" href="../../controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
                                     echo '</div>';
                                     echo '</div>';
                                     echo '</div>';
