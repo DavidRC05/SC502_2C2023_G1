@@ -179,12 +179,6 @@
     border-top: 1px solid var(--white-color);
 }
 
-
-.contenido-principal{
-  display: flex;
-  justify-content: center;
-}
-
 .sesion{
   background-color: var(--title-color);
   border-radius: 5px;
@@ -192,4 +186,9 @@
   font-weight: 400;
   font-size: 8px;
   margin-bottom: 50px;
+}
+
+.contenido-principal{
+  margin-top: 100px;
+  max-width: 100%;
 }

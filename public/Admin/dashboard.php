@@ -1,8 +1,5 @@
 <?php
 session_start();
-include 'controlador/controlador-login.php';
-include 'modelo/conexion.php';
-include 'controlador/controlador_registro.php';
 
 if ($_SESSION['id_cargo'] != 1) {
   function ocultarPagina()
@@ -69,7 +66,7 @@ if ($_SESSION['id_cargo'] != 1) {
           <a href="#">Reseñas</a>
         </div>
         <div class="enlace-sidebar">
-          <a href="#">Aplicaciones a Trabajo</a>
+          <a href="curriculums.php">Aplicaciones a Trabajo</a>
         </div>
 
       </aside>

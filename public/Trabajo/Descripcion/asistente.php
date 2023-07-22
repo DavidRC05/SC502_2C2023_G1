@@ -164,13 +164,17 @@ session_start();
                         Ingles
                     </li>
                 </ul>
-                <form action="guardar_archivo.php" method="post" enctype="multipart/form-data">
+                <?php
+                include '../../../db/conexion.php';
+                include '../../../controllers/controlador-cv.php';
+                ?>
+                <form method="post" enctype="multipart/form-data">
                     <div>
                         <label for="cv" class="custom-file-upload">Tu curriculum:</label>
-                        <input type="file" id="cv" name="cv" placeholder="Subir CV" accept=".pdf,.doc,.docx">
+                        <input type="file" name="cv" placeholder="Subir CV" accept=".pdf,.doc,.docx">
                     </div>
                     <div class="d-flex justify-content-center">
-                        <button type="submit" class="btn-trabajos mt-2">Aplicar</button>
+                        <button type="submit" class="btn-trabajos mt-2" name="aplicar">Aplicar</button>
                     </div>
                 </form>
             </div>
