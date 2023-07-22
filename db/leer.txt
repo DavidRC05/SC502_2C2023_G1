@@ -43,3 +43,16 @@ INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES
 --Usuario de Secretario
 INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES
 ('Secretario', 'Secretario', '12345', 3, 'secre@gmail.com');
+
+
+
+
+
+CREATE TABLE citas (
+  Nombre VARCHAR(150),
+  Apellido VARCHAR(150),
+  Cedula int(50),
+  Telefonos Varchar(85),
+  Fecha_y_hora Varchar(100),
+  Servicio Varchar(60),
+);

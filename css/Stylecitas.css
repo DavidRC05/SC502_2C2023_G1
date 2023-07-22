@@ -1,46 +1,84 @@
-.body-citas{
-  max-width: 1200px;
-  height: auto;
-  margin: 0 auto;
-  padding-top: 80px;
-}
-
-
-.citas .container-citas {
-  max-width: 600px;
-  background-color: #FFFFFF;
-  border-radius: 5px;
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #F2F2F2;
   padding: 20px;
 }
 
-.form-citas{
-  display: grid;
-  grid-template-columns: 40% 60%;
-  column-gap: 20px;
+.container {
+  
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.container {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
-.citas .form-title h2 {
+.container h2.form-title {
+  margin-bottom: 20px;
+  
+}
+
+.form-title h2 {
   color: #02403A;
+}
+
+h2 {
   text-align: center;
   margin-bottom: 20px;
 }
 
-.citas label {
-  font-weight: bold;
+.form-group {
+  margin-bottom: 20px;
 }
 
-.citas input[type="text"],
-.citas input[type="tel"],
-.citas input[type="date"],
-.citas select {
+label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="date"],
+select,
+select {
   border: none;
-  border-bottom: 1px solid rgb(4, 54, 4);
+  border-bottom: 1px solid rgb(4, 54, 4); /* Cambia el color a tu preferencia */
   padding: 10px;
   box-sizing: border-box;
   width: 100%;
 }
 
-.citas .boton {
+button[type="submit"] {
+  background-color: #02403A;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  width: 25%;
+}
+
+button[type="submit"]:hover {
+  background-color: #165953;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+}
+
+.button {
+  display: inline-block;
   background-color: #02403A;
   color: #FFFFFF;
   padding: 10px 20px;
@@ -49,23 +87,59 @@
   cursor: pointer;
   font-weight: bold;
   text-decoration: none;
+  float: right;
+  margin-top: 20px;
 }
 
-.citas .boton:hover {
+button[type="submit"],
+button[type="button"] {
+border-radius: 20px; /* Ajusta el valor según la cantidad de redondeo deseado */
+}
+
+.button:hover {
   background-color: #165953;
 }
 
-.citas .form-group {
+.form-group {
   margin-bottom: 20px;
 }
 
-.citas .image img {
-  max-width: 100%;
+#borrar-datos {
+  display: inline-block;
+  background-color: #02403A;
+  color: #FFFFFF;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  float: right;
+  margin-top: 20px;
+  margin-left: 5px;
+  width: 25%;
+  border-radius: 20px; /* Ajusta el valor según la cantidad de redondeo deseado */
+}
+
+#borrar-datos:hover {
+  background-color: #165953;
+}
+
+#booking-form {
+  margin-top: 80px;
+}
+
+.image {
+  position: absolute;
+  top: 0;
+  left: 38%; /* Ajusta la cantidad de desplazamiento hacia la izquierda */
+  right: -20; /* Ajusta la cantidad de desplazamiento hacia la derecha */
+  width: 115%; /* Ajusta el tamaño de la imagen según tus necesidades */
+  margin-top: 100px;
+}
+
+.image img {
+  width: 50%;
   height: auto;
 }
 
-.botones{
-  margin-top: 40px;
-  display: flex;
-  justify-content: space-evenly;
-}
