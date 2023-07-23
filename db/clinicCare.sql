@@ -60,6 +60,17 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+DROP TABLE IF EXISTS `curriculum`;
+
+--Tabla para los curriculums
+CREATE TABLE curriculum (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre_archivo VARCHAR(255) NOT NULL,
+  user_id INT NOT NULL,
+  tipo_archivo VARCHAR(80) DEFAULT NULL,
+  datos_archivo LONGLOB DEFAULT NULL,
+  FOREIGN KEY (user_id) REFERENCES usuarios(id)
+)
 --
 -- Dumping data for table `usuarios`
 --
