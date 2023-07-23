@@ -107,7 +107,12 @@ if ($_SESSION['id_cargo'] != 1) {
                                     echo '<td>' . $row['nombre'] . '</td>';
                                     echo '<td>' . $row['nombre_archivo'] . '</td>';
                                     echo '<td>' . $row['tipo_archivo'] . '</td>';
-                                    echo '<td>Acciones</td>'; // Agrega aquí las acciones que quieras mostrar (por ejemplo, un enlace para descargar el archivo)
+                                    echo '<td>';
+                                    echo '<a href="#" class="btn btn-primary btn-sm">Descargar CV</a>';
+                                    echo '</td>';
+                                    echo '<td>';
+                                    echo '<a href="#" class="btn btn-danger btn-sm ml-2">Eliminar</a>';
+                                    echo '</td>';
                                     echo '</tr>';
                                 }
                             } else {
