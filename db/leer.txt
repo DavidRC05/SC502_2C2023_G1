@@ -1,23 +1,8 @@
---Script para las funciones de registro y login
-
-A la hora de crear el esquema hay que ponerle clinica como recomendacion
-
-
 --Tabla para los roles 
 CREATE TABLE cargos (
   id INT AUTO_INCREMENT PRIMARY KEY,
   rol VARCHAR(50)
 );
-
---Tabla para los curriculums
-CREATE TABLE curriculum (
-  id INT AUTO_INCREMENT PRIMARY KEY,
-  nombre_archivo VARCHAR(255) NOT NULL,
-  user_id INT NOT NULL,
-  tipo_archivo VARCHAR(80) DEFAULT NULL,
-  datos_archivo LONGLOB DEFAULT NULL,
-  FOREIGN KEY (user_id) REFERENCES usuarios(id)
-)
 
 --Tabla para los usuarios
 CREATE TABLE usuarios (
@@ -30,6 +15,16 @@ CREATE TABLE usuarios (
   FOREIGN KEY (id_cargo) REFERENCES cargos (id)
 );
 
+--Tabla para los curriculums
+CREATE TABLE curriculum (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nombre_archivo VARCHAR(255) NOT NULL,
+  user_id INT NOT NULL,
+  tipo_archivo VARCHAR(80) DEFAULT NULL,
+  datos_archivo LONGBLOB DEFAULT NULL,
+  FOREIGN KEY (user_id) REFERENCES usuarios(id)
+);
+
 --roles de tabla (Que tengan el mismo orden)
 --1 para admin
 --2 para cliente
@@ -38,9 +33,6 @@ INSERT INTO cargos (rol) VALUES
 ('Administrador'),
 ('Cliente'),
 ('Secretario');
-
-
---Ejemplos
 
 --Usuario de admin
 INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES
@@ -54,15 +46,11 @@ INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES
 INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES
 ('Secretario', 'Secretario', '12345', 3, 'secre@gmail.com');
 
-
-
-
-
 CREATE TABLE citas (
   Nombre VARCHAR(150),
   Apellido VARCHAR(150),
-  Cedula int(50),
-  Telefonos Varchar(85),
-  Fecha_y_hora Varchar(100),
-  Servicio Varchar(60),
+  Cedula INT(50),
+  Telefonos VARCHAR(85),
+  Fecha_y_hora VARCHAR(100),
+  Servicio VARCHAR(60)
 );
