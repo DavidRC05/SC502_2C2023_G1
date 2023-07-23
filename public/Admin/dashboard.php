@@ -39,49 +39,50 @@ if ($_SESSION['id_cargo'] != 1) {
 
 <body>
   <main class="dashboard">
-    <div class="contenido-sidebar">
-      <?php if (!empty($_SESSION)) : ?>
-        <div class="navbar-text fs-6 position-absolute top-0 end-0 sesion p-2 m-2">
-          <?php echo $_SESSION['usuario']; ?>
-          <i class="bi bi-person-fill"></i>
-        </div>
-      <?php endif; ?>
-      <div class="contenedor-imagen-dash">
-        <img class="imagen-dashboard" src="../../assets/images/gallery/Logo-dashboard.png" alt="" />
-      </div>
-      <aside class="sidebar">
-        <div class="enlace-sidebar">
-          <a href="agendarCitasAdminitrador.php">Administracion de Citas</a>
-        </div>
-        <div class="enlace-sidebar">
-          <a href="calendario.php">Calendario</a>
-        </div>
-        <div class="enlace-sidebar">
-          <a href="#">Estadisticas</a>
-        </div>
-        <div class="enlace-sidebar">
-          <a href="#">Inventario</a>
-        </div>
-        <div class="enlace-sidebar">
-          <a href="#">Reseñas</a>
-        </div>
-        <div class="enlace-sidebar">
-          <a href="curriculums.php">Aplicaciones a Trabajo</a>
-        </div>
-
-      </aside>
-      <div class="dash-bajo">
-        <a class="text-white" href="../../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
-      </div>
-    </div>
-    <!--sidebar-->
-
     <div>
+      <div class="contenido-sidebar">
+        <?php if (!empty($_SESSION)) : ?>
+          <div class="navbar-text fs-6 position-absolute top-0 end-0 sesion p-2 m-2">
+            <?php echo $_SESSION['usuario']; ?>
+            <i class="bi bi-person-fill"></i>
+          </div>
+        <?php endif; ?>
+        <div class="contenedor-imagen-dash">
+          <img class="imagen-dashboard" src="../../assets/images/gallery/Logo-dashboard.png" alt="" />
+        </div>
+        <aside class="sidebar">
+          <div class="enlace-sidebar">
+            <a href="agendarCitasAdminitrador.php">Administracion de Citas</a>
+          </div>
+          <div class="enlace-sidebar">
+            <a href="calendario.php">Calendario</a>
+          </div>
+          <div class="enlace-sidebar">
+            <a href="#">Estadisticas</a>
+          </div>
+          <div class="enlace-sidebar">
+            <a href="#">Inventario</a>
+          </div>
+          <div class="enlace-sidebar">
+            <a href="#">Reseñas</a>
+          </div>
+          <div class="enlace-sidebar">
+            <a href="curriculums.php">Aplicaciones a Trabajo</a>
+          </div>
+
+        </aside>
+        <div class="dash-bajo">
+          <a class="text-white" href="../../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
+        </div>
+      </div>
+      <!--sidebar-->
+
+      <div>
 
 
 
-    </div>
-    <!--contenido-->
+      </div>
+      <!--contenido-->
   </main>
 </body>
 

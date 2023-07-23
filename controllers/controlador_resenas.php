@@ -4,10 +4,6 @@ session_start();
 include '../db/conexion.php';
 
 // Verificar si el usuario está autenticado
-function ocultarSeccionResenas()
-{
-    echo '<style>.reseñas { display: none; }</style>';
-}
 
 if (!empty($_SESSION['id'])) {
     if (isset($_POST['publicar'])) {
@@ -34,7 +30,6 @@ if (!empty($_SESSION['id'])) {
             if ($stmt->execute()) {
                 $_SESSION['reseña_realizada'] = true; // Variable de sesión para indicar que se ha realizado una reseña
                 echo '<div class="alert alert-success mensaje" role="alert">Reseña creada</div>';
-                ocultarSeccionResenas();
                 // Realizar acciones adicionales después de la inserción, si es necesario
                 // Por ejemplo, redirigir al usuario a otra página
                 // header("Location: otra_pagina.php");

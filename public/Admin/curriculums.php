@@ -85,7 +85,9 @@ if ($_SESSION['id_cargo'] != 1) {
                             <th>Nombre del Usuario</th>
                             <th>Nombre del Archivo</th>
                             <th>Tipo de Archivo</th>
-                            <th>Acciones</th>
+                            <th>Ver CV</th>
+                            <th>Eliminar</th>
+
                         </tr>
                         <?php
                         include '../../db/conexion.php';
