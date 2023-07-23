@@ -60,6 +60,19 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
+--Tabla para el funcionamiento de reseñas
+DROP TABLE IF EXISTS `reseñas`;
+CREATE TABLE reseñas (
+  id INT PRIMARY KEY AUTO_INCREMENT,
+  usuario_id INT,
+  comentario TEXT,
+  rate int,
+  fecha DATETIME,
+  FOREIGN KEY (usuario_id) REFERENCES usuarios(id)
+);
+
+
+
 DROP TABLE IF EXISTS `curriculum`;
 
 --Tabla para los curriculums
