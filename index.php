@@ -267,6 +267,92 @@ session_start();
             </div>
         </section>
         
+        <!--Reviews de la Clinica-->
+        <section class="testimonios m-3">
+            <h2 class="text-center m-4">¿Qué dicen nuestros clientes?</h2>
+            <div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel">
+                <div class="carousel-inner">
+                    <?php
+                    include 'modelo/conexion.php';
+
+                    // Consulta SQL para obtener las últimas reseñas insertadas
+                    $sql = "SELECT r.comentario, r.rate, u.nombre FROM reseñas r
+                    INNER JOIN usuarios u ON r.usuario_id = u.id
+                    ORDER BY r.id DESC
+                    LIMIT 5"; // Obtén las últimas 5 reseñas
+
+                    $result = $conexion->query($sql);
+
+                    // Verificar si hay resultados
+                    if ($result->num_rows > 0) {
+                        $active = true;
+                        // Recorrer los resultados y generar los elementos del carrusel
+                        while ($row = $result->fetch_assoc()) {
+                            $nombreCliente = $row['nombre'];
+                            $comentario = $row['comentario'];
+                            $rate = $row['rate'];
+
+                            // Generar el HTML del item del carrusel
+                            echo '<div class="carousel-item ' . ($active ? 'active' : '') . '">';
+                            echo '<div class="row d-flex justify-content-center">';
+                            echo '<div class="col-lg-8">';
+                            echo '<h5 class="mb-3">' . $nombreCliente . '</h5>';
+                            echo '<p class="text-muted">';
+                            echo '<i class="fas fa-quote-left pe-2"></i>';
+                            echo $comentario;
+                            echo '<i class="fas fa-quote-right pe-2"></i>';
+                            echo '</p>';
+                            echo '</div>';
+                            echo '</div>';
+                            echo '<ul class="list-unstyled d-flex justify-content-center text-warning mb-0">';
+
+                            // Generar las estrellas del rating
+                            for ($i = 1; $i <= 5; $i++) {
+                                if ($i <= $rate) {
+                                    echo '<li><i class="fas fa-star fa-sm"></i></li>';
+                                } else {
+                                    echo '<li><i class="far fa-star fa-sm"></i></li>';
+                                }
+                            }
+
+                            echo '</ul>';
+                            echo '</div>';
+
+                            $active = false; // Desactivar la clase "active" después del primer item
+                        }
+                    } else {
+                        // Si no hay reseñas, mostrar un mensaje alternativo
+                        echo '<div class="carousel-item active">';
+                        echo '<div class="row d-flex justify-content-center">';
+                        echo '<div class="col-lg-8">';
+                        echo '<h5 class="mb-3">No hay reseñas disponibles.</h5>';
+                        echo '</div>';
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+
+
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+            <script>
+                // Inicializar el carrusel
+                $(document).ready(function() {
+                    $('#carouselExampleControls').carousel();
+                });
+            </script>
+        </section>
+
         <!--Reseñas de la Clinica-->
         <section class="reseñas">
             <?php
