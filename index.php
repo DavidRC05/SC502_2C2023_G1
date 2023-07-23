@@ -266,10 +266,55 @@ session_start();
                 </div>
             </div>
         </section>
+        
         <!--Reseñas de la Clinica-->
-        <section>
-            <h2 class="text-center mb-lg-5 mb-4">¿Que dicen nuestros pacientes?</h2>
+        <section class="reseñas">
+            <?php
+            include 'modelo/conexion.php';
+            include 'controlador/controlador_resenas.php';
+            ?>
+            <h2>¡Danos tu opinion!</h2><br>
+            <div class="container-reseñas">
+                <div class="post">
+                    <div class="text">¡Gracias por tu reseña!</div>
+                    <div class="edit">EDITAR</div>
+                </div>
+                <div class="star-widget">
+                    <input type="radio" name="rate" id="rate-5" value="5">
+                    <label for="rate-5" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-4" value="4">
+                    <label for="rate-4" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-3" value="3">
+                    <label for="rate-3" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-2" value="2">
+                    <label for="rate-2" class="fas fa-star"></label>
+                    <input type="radio" name="rate" id="rate-1" value="1">
+                    <label for="rate-1" class="fas fa-star"></label>
 
+                    <form method="post">
+                        <header></header>
+                        <div class="textarea">
+                            <textarea cols="30" placeholder="Describe tu experiencia.." name="comentario"></textarea>
+                        </div>
+                        <div class="btn">
+                            <input type="hidden" name="rate" id="rate-hidden">
+                            <button onclick="click" type="submit" name="publicar" value="Publicar">Publicar</button>
+                        </div>
+                    </form>
+                </div>
+
+                <script>
+                    const radioButtons = document.querySelectorAll('input[name="rate"]');
+                    const rateHiddenInput = document.getElementById('rate-hidden');
+
+                    radioButtons.forEach(radioButton => {
+                        radioButton.addEventListener('click', () => {
+                            rateHiddenInput.value = radioButton.value;
+                        });
+                    });
+                </script>
+
+            </div>
         </section>
 
     </main>
