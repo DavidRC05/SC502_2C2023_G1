@@ -1,6 +1,6 @@
 <?php
 // Realiza la conexión a la base de datos
-require 'modelo/conexion.php';
+include '../db/conexion.php';
 // Consulta SQL para obtener las nuevas reseñas (puedes adaptarla según tu estructura de base de datos)
 $sql = "SELECT r.comentario, r.rate, u.nombre FROM reseñas r INNER JOIN usuarios u ON r.usuario_id = u.id WHERE r.id > ?";
 $stmt = $conexion->prepare($sql);

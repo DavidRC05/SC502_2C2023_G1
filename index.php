@@ -28,7 +28,9 @@ session_start();
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.min.css">
 
-    <link href="./css/style.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
 
 
 </head>
@@ -266,14 +268,15 @@ session_start();
                 </div>
             </div>
         </section>
-        
+
         <!--Reviews de la Clinica-->
         <section class="testimonios m-3">
             <h2 class="text-center m-4">¿Qué dicen nuestros clientes?</h2>
             <div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel">
                 <div class="carousel-inner">
                     <?php
-                    include 'modelo/conexion.php';
+                    include 'db/conexion.php';
+
 
                     // Consulta SQL para obtener las últimas reseñas insertadas
                     $sql = "SELECT r.comentario, r.rate, u.nombre FROM reseñas r
@@ -356,8 +359,8 @@ session_start();
         <!--Reseñas de la Clinica-->
         <section class="reseñas">
             <?php
-            include 'modelo/conexion.php';
-            include 'controlador/controlador_resenas.php';
+            include 'db/conexion.php';
+            include 'controllers/controlador_resenas.php';
             ?>
             <h2>¡Danos tu opinion!</h2><br>
             <div class="container-reseñas">

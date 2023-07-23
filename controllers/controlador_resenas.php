@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-require 'modelo/conexion.php';
+include '../db/conexion.php';
 
 // Verificar si el usuario está autenticado
 function ocultarSeccionResenas()
