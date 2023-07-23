@@ -1,6 +1,6 @@
 <?php
 //                      Servidor     User    Contraseña  Nombre de BD
-$conexion = new mysqli("localhost", "root", "", "clinica");
+$conexion = new mysqli("localhost", "root", "Mathi2004!", "clinica");
 
 $conexion->set_charset("utf8");
 

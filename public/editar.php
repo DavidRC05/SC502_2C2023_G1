@@ -57,17 +57,11 @@
 </head>
 <body>
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "clinica";
-
-// Crear una conexión a la base de datos
-$conn = new mysqli($servername, $username, $password, $dbname);
+include '../db/conexion.php';
 
 // Verificar la conexión
-if ($conn->connect_error) {
-    die("Error de conexión: " . $conn->connect_error);
+if ($conexion->connect_error) {
+    die("Error de conexión: " . $conexion->connect_error);
 }
 
 if (isset($_POST['enviar'])) {
@@ -81,19 +75,19 @@ if (isset($_POST['enviar'])) {
 
     // Actualizar los datos en la base de datos
     $sql = "UPDATE citas SET Nombre='$nombre', Apellido='$apellido', Telefonos='$telefonos', Fecha_y_hora='$fecha_y_hora', Servicio='$servicio' WHERE Cedula='$cedula'";
-    if (mysqli_query($conn, $sql)) {
+    if (mysqli_query($conexion, $sql)) {
         // Redirigir a la página principal después de la actualización
         header("Location: agendarCitasAdminitrador.php");
         exit();
     } else {
-        echo "Error al actualizar los datos: " . mysqli_error($conn);
+        echo "Error al actualizar los datos: " . mysqli_error($conexion);
     }
 } else {
     // Si el formulario no se ha enviado, obtener los datos de la base de datos y asignarlos a las variables
     $id_cita = $_GET['cedula'];
 
     $sql = "SELECT * FROM citas WHERE Cedula = '$id_cita'";
-    $resultado = mysqli_query($conn, $sql);
+    $resultado = mysqli_query($conexion, $sql);
 
     if ($fila = mysqli_fetch_assoc($resultado)) {
         $nombre = $fila["Nombre"];

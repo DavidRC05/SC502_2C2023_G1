@@ -21,17 +21,11 @@
         <h2>Citas Agendadas Secretaria</h2>
         <?php
         // Datos de conexión a la base de datos
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname = "clinica";
-
-        // Crear una conexión a la base de datos
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        include '../db/conexion.php';
 
         // Verificar la conexión
-        if ($conn->connect_error) {
-            die("Error de conexión: " . $conn->connect_error);
+        if ($conexion->connect_error) {
+            die("Error de conexión: " . $conexion->connect_error);
         }
 
         if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar']) && isset($_POST['id_cita'])) {
@@ -39,7 +33,7 @@
 
             // Realizar la consulta para eliminar el registro
             $sql = "DELETE FROM citas WHERE Cedula = '$id_cita'";
-            if (mysqli_query($conn, $sql)) {
+            if (mysqli_query($conexion, $sql)) {
                 // El registro se eliminó correctamente
                 // Puedes mostrar una alerta con SweetAlert o redirigir a la página principal
                 echo "<script>
@@ -66,7 +60,7 @@
         }
 
         $sql = "SELECT * FROM citas;";
-        $result = mysqli_query($conn, $sql);
+        $result = mysqli_query($conexion, $sql);
 
        
         // Resto del código PHP
@@ -112,7 +106,7 @@
         }
 
         // Cierra la conexión a la base de datos
-        mysqli_close($conn);
+        mysqli_close($conexion);
         ?>
         
     </div>
