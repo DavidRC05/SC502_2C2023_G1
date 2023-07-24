@@ -110,10 +110,10 @@ if ($_SESSION['id_cargo'] != 1) {
                                     echo '<td>' . $row['nombre_archivo'] . '</td>';
                                     echo '<td>' . $row['tipo_archivo'] . '</td>';
                                     echo '<td>';
-                                    echo '<a href="#" class="btn btn-primary btn-sm">Descargar CV</a>';
+                                    echo '<a href="../../../controllers/descargar_cv.php?archivo=' . urlencode($row['nombre_archivo']) . '" class="btn btn-primary btn-sm">Descargar CV</a>';
                                     echo '</td>';
                                     echo '<td>';
-                                    echo '<a href="#" class="btn btn-danger btn-sm ml-2">Eliminar</a>';
+                                    echo '<a href="../../controllers/eliminar_cv.php?archivo=' . urlencode($row['nombre_archivo']) . '" class="btn btn-danger btn-sm ml-2 eliminar-archivo">Eliminar</a>';
                                     echo '</td>';
                                     echo '</tr>';
                                 }
@@ -135,6 +135,12 @@ if ($_SESSION['id_cargo'] != 1) {
 
         <!--contenido-->
     </main>
+
+    <!-- Agrega SweetAlert y SweetAlert2 AJAX -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+    <script src="../../js/scriptCurriculum.js"></script>
+
 </body>
 
 </html>
