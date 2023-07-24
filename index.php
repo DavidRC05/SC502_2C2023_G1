@@ -434,7 +434,7 @@ session_start();
 
                 <div class="col-lg-2 col-md-6 col-12 my-4 my-lg-0">
                     <h5 class="mb-lg-4 mb-3">Nuestra Clinica</h5>
-                    <p class="mt-2"><a href="mailto:hello@company.co">hello@company.co</a>
+                    <p class="mt-2"><a href="mailto:cliniccare.cr@gmail.com">cliniccare.cr@gmail.com</a>
                     <p>
                     <p>🇨🇷CC Novacentro-Guadalupe San José</p>
                 </div>
