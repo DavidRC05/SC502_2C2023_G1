@@ -54,3 +54,14 @@ CREATE TABLE citas (
   Fecha_y_hora VARCHAR(100),
   Servicio VARCHAR(60)
 );
+
+
+--Para promociones
+
+CREATE TABLE ofertas(
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  titulo VARCHAR(80),
+  descripcion VARCHAR(250),
+  imagen BLOB,
+  nombre_imagen varchar(80)
+);

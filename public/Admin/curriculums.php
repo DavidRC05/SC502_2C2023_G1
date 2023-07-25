@@ -60,7 +60,7 @@ if ($_SESSION['id_cargo'] != 1) {
                     <a href="#">Estadisticas</a>
                 </div>
                 <div class="enlace-sidebar">
-                    <a href="#">Inventario</a>
+                    <a href="promociones.php">Promociones</a>
                 </div>
                 <div class="enlace-sidebar">
                     <a href="#">Reseñas</a>

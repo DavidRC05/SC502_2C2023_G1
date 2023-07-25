@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'db/conexion.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -53,11 +54,11 @@ session_start();
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.php">Sobre Nosotros</a>
+                            <a class="nav-link" href="#about">Sobre Nosotros</a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.php">Servicios</a>
+                            <a class="nav-link" href="#services">Servicios</a>
                         </li>
 
                         <?php if (!empty($_SESSION)) : ?>
@@ -66,7 +67,7 @@ session_start();
                         <?php endif; ?>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.php">Testimonios</a>
+                            <a class="nav-link" href="#testimonios">Testimonios</a>
                         </li>
 
                         <?php if (empty($_SESSION)) : ?>
@@ -79,7 +80,7 @@ session_start();
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" href="../index.php">Contacto</a>
+                            <a class="nav-link" href="#contact">Contacto</a>
                         </li>
 
                         <?php if (empty($_SESSION)) : ?>
@@ -183,7 +184,7 @@ session_start();
             </div>
         </section>
 
-        <section class="section-padding" id="about">
+        <section class="section-padding pb-5" id="about">
             <div class="container">
                 <div class="row">
 
@@ -214,23 +215,55 @@ session_start();
             </div>
         </section>
 
-        <section class="gallery">
-            <div class="container">
-                <div class="row">
+        <?php
+        // Realizar la consulta SQL para obtener las promociones
+        $sql = "SELECT * FROM ofertas";
+        $resultado = $conexion->query($sql);
+        ?>
+        <?php if ($resultado->num_rows > 0) : ?>
+            <section class="gallery section-padding pb-5">
+                <div>
+                    <h2 class="text-center mb-lg-5 mb-4">Promociones</h2>
+                    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+                        <div class="carousel-inner">
+                            <?php
+                            $active = true;
+                            while ($row = $resultado->fetch_assoc()) {
+                                $descripcion = $row['descripcion'];
+                                $titulo = $row['titulo'];
+                                $imagen = $row['imagen'];
 
-                    <div class="col-lg-6 ps-0 d-flex flex-column">
-                        <img src="./assets/images/gallery/ejemplo-tratamiento-cliniccare.jpg" class="img-fluid galleryImage" alt="Clinic Care" title="Clinic Care">
+                                // Generar el contenido del carousel-item
+                                echo '<div class="carousel-item ' . ($active ? 'active' : '') . '" data-bs-interval="10000">';
+                                echo '    <div class="card border-0 bg-transparent text-center">';
+                                echo '        <div class="card-body p-0">';
+                                echo '            <div class="contendor-promo mb-4">';
+                                echo '            <img class="w-75" src="' . $imagen . '" alt="Imagen de la promoción">';
+                                echo '            </div>';
+                                echo '            <a href="public/agendarCitas.php" data-hover="Aprovechar Oferta" class="custom-link mt-4">Aprovechar Oferta</a>';
+                                echo '        </div>';
+                                echo '    </div>';
+                                echo '</div>';
+
+                                $active = false;
+                            }
+                            ?>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
                     </div>
-
-                    <div class="col-lg-6 ps-0 d-flex flex-column">
-                        <img src="./assets/images/gallery/Uñas.jpg" class="img-fluid galleryImage" alt="Clinic Care" title="Clinic Care">
-                    </div>
-
                 </div>
-            </div>
-        </section>
+            </section>
+        <?php endif; ?>
+
         <!--Seccion de Servicios-->
-        <section class="section-padding pb-0" id="services">
+        <section class="section-padding pb-5" id="services">
             <div class="container">
                 <div class="row">
                     <h2 class="text-center mb-lg-5 mb-4">Nuestros Servicios</h2>
@@ -240,28 +273,28 @@ session_start();
                             <h3 style="color: #02403A;">Rinomodelación</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
                                 saepe esse accusantium.</p>
-                            <a class="custom-link" href="#booking" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
+                            <a class="custom-link" href="public/agendarCitas.php" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/cosmelan-clinic.jpg" alt="Servicio Cosmelan">
                             <h3 style="color: #02403A;">Cosmelan</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
                                 saepe esse accusantium.</p>
-                            <a class="custom-link" href="#booking" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
+                            <a class="custom-link" href="public/agendarCitas.php" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/Botox.jpg" alt="Servicio Botox">
                             <h3 style="color: #02403A;">Botox</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
                                 saepe esse accusantium.</p>
-                            <a class="custom-link" href="#booking" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
+                            <a class="custom-link" href="public/agendarCitas.php" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/hydrafacial-treatment.webp" alt="Servicio Hydrafacial">
                             <h3 style="color: #02403A;">Hydrafacial</h3>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
                                 saepe esse accusantium.</p>
-                            <a class="custom-link" href="#booking" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
+                            <a class="custom-link" href="public/agendarCitas.php" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
 
                     </section>
@@ -270,12 +303,12 @@ session_start();
         </section>
 
         <!--Reviews de la Clinica-->
-        <section class="testimonios m-3">
-            <h2 class="text-center m-4">¿Qué dicen nuestros clientes?</h2>
+        <section class="testimonios m-3 section-padding pb-5" id="testimonios">
+            <h2 class="text-center mb-lg-5 mb-4 ">¿Qué dicen nuestros clientes?</h2>
             <div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel">
                 <div class="carousel-inner">
                     <?php
-                    include 'db/conexion.php';
+
 
 
                     // Consulta SQL para obtener las últimas reseñas insertadas
@@ -357,12 +390,11 @@ session_start();
         </section>
 
         <!--Reseñas de la Clinica-->
-        <section class="reseñas">
+        <section class="reseñas pb-5">
             <?php
-            include 'db/conexion.php';
             include 'controllers/controlador_resenas.php';
             ?>
-            <h2>¡Danos tu opinion!</h2><br>
+            <h2 class="mb-lg-5 mb-4">¡Danos tu opinion!</h2><br>
             <div class="container-reseñas">
                 <div class="post">
                     <div class="text">¡Gracias por tu reseña!</div>

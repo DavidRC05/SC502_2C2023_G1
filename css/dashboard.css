@@ -179,7 +179,14 @@
     border-top: 1px solid var(--white-color);
 }
 
-
+.boton{
+  border-radius: 40px;
+  padding: 10px 100px;
+  border: none;
+  background-color: var(--primary-color);
+  color: var(--section-bg-color);
+  margin-top: 30px;
+}
 
 .sesion{
   background-color: var(--title-color);
