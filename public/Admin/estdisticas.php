@@ -57,7 +57,7 @@ if ($_SESSION['id_cargo'] != 1) {
                     <a href="calendario.php">Calendario</a>
                 </div>
                 <div class="enlace-sidebar">
-                    <a href="estadisticas.php">Estadisticas</a>
+                    <a href="#">Estadisticas</a>
                 </div>
                 <div class="enlace-sidebar">
                     <a href="promociones.php">Promociones</a>
@@ -79,6 +79,7 @@ if ($_SESSION['id_cargo'] != 1) {
         <div class="contenido-principal">
 
         </div>
+        <!--Recordatorio investigar librerias para mostrar estadisticas de mysql-->
 
 
 
