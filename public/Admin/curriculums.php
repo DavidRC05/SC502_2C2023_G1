@@ -57,7 +57,7 @@ if ($_SESSION['id_cargo'] != 1) {
                     <a href="calendario.php">Calendario</a>
                 </div>
                 <div class="enlace-sidebar">
-                    <a href="#">Estadisticas</a>
+                    <a href="estadisticas.php">Estadisticas</a>
                 </div>
                 <div class="enlace-sidebar">
                     <a href="promociones.php">Promociones</a>
