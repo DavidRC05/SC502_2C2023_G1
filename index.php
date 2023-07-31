@@ -302,7 +302,7 @@ include 'db/conexion.php';
             </div>
         </section>
 
-        <!--Reviews de la Clinica-->
+        <!--Testimonios de la Clinica-->
         <section class="testimonios m-3 section-padding pb-5" id="testimonios">
             <h2 class="text-center mb-lg-5 mb-4 ">¿Qué dicen nuestros clientes?</h2>
             <div id="carouselExampleControls" class="carousel slide text-center carousel-dark" data-mdb-ride="carousel">
