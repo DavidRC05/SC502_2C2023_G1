@@ -65,3 +65,8 @@ CREATE TABLE ofertas(
   imagen BLOB,
   nombre_imagen varchar(80)
 );
+
+
+--Para Grafico de edades
+ALTER TABLE usuarios
+ADD edad VARCHAR(10);

@@ -44,6 +44,10 @@
             <input class="form-control mt-0 registro_campo" type="email" name="correo" required>
           </div>
           <div class="mb-4">
+            <p class="registro__texto mb-0 h6">Edad</p>
+            <input min=18 type="number" class="form-control mt-0 registro_campo" id="edad" name="edad">
+          </div>
+          <div class="mb-4">
             <p class="registro__texto mb-0 h6">Crear usuario</p>
             <input class="form-control mt-0 registro_campo" type="text" name="usuario" required>
           </div>

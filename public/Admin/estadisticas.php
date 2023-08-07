@@ -77,7 +77,12 @@ if ($_SESSION['id_cargo'] != 1) {
         <!--sidebar-->
 
         <div class="contenido-principal">
+            <h2 class="text-center mb-3">Grafico de Edades</h2>
+            <div class="d-flex justify-content-center align-items-center mt-5">
+                <canvas id="ageChart" width="700" height="350"></canvas>
+            </div>
 
+            <script src="../../js/scriptGraficos.js"></script>
         </div>
         <!--Recordatorio investigar librerias para mostrar estadisticas de mysql-->
 
@@ -87,6 +92,7 @@ if ($_SESSION['id_cargo'] != 1) {
     </main>
 
     <!-- Agrega SweetAlert y SweetAlert2 AJAX -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
     <script src="../../js/scriptCurriculum.js"></script>

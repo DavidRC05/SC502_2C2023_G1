@@ -7,6 +7,7 @@ if (isset($_POST['enviar'])) {
     $contraseña = $_POST['nueva-contraseña'];
     $confirmarContraseña = $_POST['conf-contraseña'];
     $email = $_POST['correo'];
+    $edad = $_POST['edad'];
 
     if ($contraseña === $confirmarContraseña) {
         // Verificar si el usuario y correo ya existen en la base de datos
@@ -22,7 +23,7 @@ if (isset($_POST['enviar'])) {
             echo '<div class="text-center alert alert-danger text-center">El correo electrónico ya está registrado</div>';
         } else {
             // Insertar el registro en la base de datos
-            $sql = "INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email) VALUES ('$nombre', '$usuario', '$contraseña', 2, '$email')";
+            $sql = "INSERT INTO usuarios (nombre, usuario, contraseña, id_cargo, email, edad) VALUES ('$nombre', '$usuario', '$contraseña', 2, '$email','$edad')";
 
             if ($conexion->query($sql) === TRUE) {
                 // Obtener el id_cargo del usuario recién registrado
@@ -43,3 +44,4 @@ if (isset($_POST['enviar'])) {
         echo '<div class="text-center alert alert-danger text-center">Las contraseñas no coinciden</div>';
     }
 }
+?>
