@@ -136,7 +136,7 @@ if ($_SESSION['id_cargo'] != 1) {
                                                 echo '<a href="' . urlencode($row['imagen']) . '" target="_blank" class="btn btn-dark btn-sm">Previzualizar</a>';
                                                 echo '</td>';
                                                 echo '<td>';
-                                                echo '<a href="../../controllers/eliminar_promo.php?archivo=' . urlencode($row['nombre_imagen']) . '" class="btn btn-danger btn-sm ml-2 ">Eliminar</a>';
+                                                echo '<a href="../../controllers/eliminar_promo.php?archivo=' . urlencode($row['nombre_imagen']) . '" class="btn btn-danger btn-sm ml-2 eliminar-promo">Eliminar</a>';
                                                 echo '</td>';
                                                 echo '</tr>';
                                             }
@@ -174,7 +174,7 @@ if ($_SESSION['id_cargo'] != 1) {
     <!-- Agrega SweetAlert y SweetAlert2 AJAX -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
-    <script src="../../js/scriptCurriculum.js"></script>
+    <script src="../../js/scriptPromos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 
