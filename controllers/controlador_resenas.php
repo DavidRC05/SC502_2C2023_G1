@@ -51,7 +51,7 @@ if (!empty($_SESSION['id'])) {
     }
 } else {
     if (isset($_POST['publicar'])) {
-        echo '<div class="mensaje" role="alert">Debes iniciar sesion para dejar tu reseña</div>';
+        echo '<div class="text-center alert alert-danger text-center">Debes iniciar sesión primero</div>';
     } else {
         echo '';
     }

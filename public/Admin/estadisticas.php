@@ -76,13 +76,21 @@ if ($_SESSION['id_cargo'] != 1) {
         </div>
         <!--sidebar-->
 
-        <div class="contenido-principal">
-            <h2 class="text-center mb-3">Grafico de Edades</h2>
-            <div class="d-flex justify-content-center align-items-center mt-5">
-                <canvas id="ageChart" width="700" height="350"></canvas>
+        <div class="contenido-principal d-flex flex-wrap gap-3 ms-5">
+            <div>
+                <h2 class="text-center mb-3">Grafico de Edades</h2>
+                <div class="d-flex justify-content-center align-items-center mt-5">
+                    <canvas id="ageChart" width="450" height="350"></canvas>
+                </div>
             </div>
-
+            <div>
+                <h2 class="text-center mb-3">Grafico de Citas</h2>
+                <div class="d-flex justify-content-center align-items-center">
+                    <?php include 'get_citas_data.php' ?>
+                </div>
+            </div>
             <script src="../../js/scriptGraficos.js"></script>
+
         </div>
         <!--Recordatorio investigar librerias para mostrar estadisticas de mysql-->
 

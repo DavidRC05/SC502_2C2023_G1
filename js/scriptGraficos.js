@@ -31,3 +31,5 @@ async function createAgeChart() {
 
 // Cargar el gráfico cuando la página esté lista
 document.addEventListener('DOMContentLoaded', createAgeChart);
+
+

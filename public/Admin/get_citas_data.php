@@ -1,6 +1,6 @@
 <?php
 // Datos de conexión a la base de datos
-include 'db/conexion.php';
+include '../../db/conexion.php';
 
 // Verificar la conexión
 if ($conexion->connect_error) {
@@ -49,6 +49,7 @@ $nombreMeses = array(
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,18 +58,23 @@ $nombreMeses = array(
     <style>
         /* Estilos para el gráfico */
         #citasChart {
-            width: 50%; /* Ajusta el tamaño del gráfico */
-            margin-left: 20%; /* Ajusta la posición a la derecha */
+            width: 50%;
+            /* Ajusta el tamaño del gráfico */
+            margin-left: 20%;
+            /* Ajusta la posición a la derecha */
         }
     </style>
 </head>
+
 <body>
-    <canvas id="citasChart"></canvas>
+    <div class="d-flex justify-content-center align-items-center mt-5">
+        <canvas id="citasChart" width="450" height="350"></canvas>
+    </div>
     <script>
-        document.addEventListener("DOMContentLoaded", function () {
+        document.addEventListener("DOMContentLoaded", function() {
             var datosCitas = <?php echo $datosCitas; ?>;
             var nombreMeses = <?php echo json_encode($nombreMeses); ?>; // Obtener los nombres de los meses
-            
+
             var meses = Object.keys(datosCitas);
             var citasAgendadas = Object.values(datosCitas);
             var labelsMeses = meses.map(function(mes) {
@@ -80,26 +86,22 @@ $nombreMeses = array(
                 type: "bar",
                 data: {
                     labels: labelsMeses, // Usar los nombres de los meses como etiquetas
-                    datasets: [
-                        {
-                            label: "Citas Agendadas",
-                            data: citasAgendadas,
-                            backgroundColor: "rgb(22, 89, 83)",
-                            borderColor: "rgb(22, 89, 83)",
-                            borderWidth: 1,
-                        },
-                    ],
+                    datasets: [{
+                        label: "Citas Agendadas",
+                        data: citasAgendadas,
+                        backgroundColor: "rgb(22, 89, 83)",
+                        borderColor: "rgb(22, 89, 83)",
+                        borderWidth: 1,
+                    }, ],
                 },
                 options: {
-                    scales: {
-                        y: {
-                            beginAtZero: true,
-                        },
-                    },
-                },
+                    responsive: false, // Desactivar la adaptación al tamaño
+                    // Resto de opciones...
+                }
             });
         });
     </script>
-    
+
 </body>
+
 </html>
