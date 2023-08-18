@@ -132,6 +132,23 @@ include 'db/conexion.php';
                                     echo '</div>';
                                     echo '</div>';
                                     break;
+                                case 3:
+                                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0 me-3">';
+                                    echo '<a class="btn btn-secondary me-3 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                                    echo $_SESSION['usuario'];
+                                    echo '<i class="bi bi-person-fill"></i>';
+                                    echo '</a>';
+
+                                    echo '<div class="dropdown-menu desplegar pe-2" aria-labelledby="dropdownMenuLink">';
+                                    echo '<div class="contenedor__texto">';
+                                    echo '<a class="text-white text-center desplegar__letra" href="public/dashboard_sec.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
+                                    echo '</div>';
+                                    echo '<div class="contenedor__texto">';
+                                    echo '<a class="text-white text-center desplegar__letra" href="controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    echo '</div>';
+                                    break;
                             }
                         }
                         ?>

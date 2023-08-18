@@ -26,7 +26,7 @@ if (!empty($_POST["btningresar"])) {
                     header("Location: ../index.php");
                     break;
                 case 3: // Secretario
-                    header("Location: dashboard_secretario.php");
+                    header("Location: dashboard_sec.php");
                     break;
                 default:
                     echo '<div class="text-center alert alert-danger text-center">Acceso denegado</div>';
