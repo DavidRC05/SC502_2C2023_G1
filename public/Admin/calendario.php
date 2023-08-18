@@ -31,9 +31,8 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.0/font/bootstrap-icons.css" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.min.css" />
+    <!-- CSS for full calender -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../../css/dashboard.css" />
 </head>
@@ -88,6 +87,7 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
 
         <div class="contenido-principal">
 
+
         </div>
 
 
@@ -95,13 +95,17 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
         <!--contenido-->
     </main>
 
-    <!-- Agrega SweetAlert y SweetAlert2 AJAX -->
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
-    <script src="../../js/scriptCurriculum.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-
 
 </body>
+
+</script>
+<!-- Agrega SweetAlert y SweetAlert2 AJAX -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
+<!-- JS for jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<!-- JS for full calender -->
+<script src=" https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 </html>

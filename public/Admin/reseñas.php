@@ -86,10 +86,59 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
         <!--sidebar-->
 
         <div class="contenido-principal">
+            <div class="container">
+                <h2 class="text-center">Reseñas de Usuarios</h2>
+                <hr>
+                <div class="row">
+                    <?php
+                    include '../../db/conexion.php';
+                    $sql = "SELECT r.id, r.comentario, r.rate, u.nombre FROM reseñas r
+            INNER JOIN usuarios u ON r.usuario_id = u.id";
+                    $result = $conexion->query($sql);
 
+                    if ($result->num_rows > 0) {
+                        while ($row = $result->fetch_assoc()) {
+                    ?>
+                            <div class="col-md-4 mb-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Cliente: <?php echo $row['nombre']; ?></h5>
+                                        <p class="card-text">Calificación: <?php echo $row['rate']; ?></p>
+                                        <p class="card-text">Comentario: <?php echo $row['comentario']; ?></p>
+                                        <a href="eliminar_resena.php?id=<?php echo $row['id']; ?>" class="btn btn-danger btn-sm" onclick="confirmarEliminar(event)">Eliminar</a>
+                                    </div>
+                                </div>
+                            </div>
+                    <?php
+                        }
+                    } else {
+                        echo "<p>No hay reseñas disponibles.</p>";
+                    }
+                    ?>
+                </div>
+            </div>
         </div>
 
+        <script>
+            function confirmarEliminar(event) {
+                event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
 
+                Swal.fire({
+                    title: '¿Estás seguro de eliminar esta reseña?',
+                    text: "Esta acción no se puede deshacer",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#d33',
+                    cancelButtonColor: '#3085d6',
+                    confirmButtonText: 'Sí, eliminar',
+                    cancelButtonText: 'Cancelar'
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        window.location.href = event.target.href; // Redirigir a la URL de eliminación
+                    }
+                });
+            }
+        </script>
 
         <!--contenido-->
     </main>
