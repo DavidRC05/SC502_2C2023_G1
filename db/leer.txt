@@ -70,3 +70,7 @@ CREATE TABLE ofertas(
 --Para Grafico de edades
 ALTER TABLE usuarios
 ADD edad VARCHAR(10);
+
+-- Para Grafico de Citas Por Atender, Confirmadas, Atendidas, Canceladas
+ALTER TABLE citas 
+ADD Estado VARCHAR(10) DEFAULT 'Por Atender';

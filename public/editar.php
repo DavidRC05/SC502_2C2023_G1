@@ -72,12 +72,13 @@ if (isset($_POST['enviar'])) {
     $telefonos = $_POST['telefonos'];
     $fecha_y_hora = $_POST['Fechayhora'];
     $servicio = $_POST['Servicio'];
+    $estado = $_POST['Estado'];
 
     // Actualizar los datos en la base de datos
-    $sql = "UPDATE citas SET Nombre='$nombre', Apellido='$apellido', Telefonos='$telefonos', Fecha_y_hora='$fecha_y_hora', Servicio='$servicio' WHERE Cedula='$cedula'";
+    $sql = "UPDATE citas SET Nombre='$nombre', Apellido='$apellido', Telefonos='$telefonos', Fecha_y_hora='$fecha_y_hora', Servicio='$servicio', Estado='$estado' WHERE Cedula='$cedula'";
     if (mysqli_query($conexion, $sql)) {
         // Redirigir a la página principal después de la actualización
-        header("Location: agendarCitasAdminitrador.php");
+        header("Location: Admin/agendarCitasAdminitrador.php");
         exit();
     } else {
         echo "Error al actualizar los datos: " . mysqli_error($conexion);
@@ -96,6 +97,7 @@ if (isset($_POST['enviar'])) {
         $telefonos = $fila["Telefonos"];
         $fecha_y_hora = $fila["Fecha_y_hora"];
         $servicio = $fila["Servicio"];
+        $estado = $fila["Estado"];
     } else {
         // Si no se encontró la cita con esa cédula, puedes mostrar un mensaje de error
         echo "Cita no encontrada.";
@@ -123,14 +125,17 @@ if (isset($_POST['enviar'])) {
     <label>Servicio:</label>
     <input type="text" name="Servicio" value="<?php echo $servicio ?>"> <br>
 
+    <label>Estado:</label>
+    <select name="Estado">
+        <option value="confirmado" <?php if ($estado === 'confirmado') echo 'selected'; ?>>Confirmado</option>
+        <option value="cancelado" <?php if ($estado === 'cancelado') echo 'selected'; ?>>Cancelado</option>
+        <option value="atendido" <?php if ($estado === 'atendido') echo 'selected'; ?>>Atendido</option>
+    </select> <br>
+
     <input type="hidden" name="cedula" value="<?php echo $id_cita; ?>">
     
     <input type="submit" name="enviar" value="Actualizar">
     <a href="agendarCitasAdminitrador.php">Regresar</a>
 </form>
-<?php
-// Resto de tu código
-// ...
-?>
 </body>
 </html>

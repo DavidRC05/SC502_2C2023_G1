@@ -102,4 +102,38 @@ button.eliminar {
     text-align: right;
 }
 
+.filtro-estado {
+    margin-bottom: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.filtro-estado label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.filtro-estado select {
+    padding: 5px;
+    border: 1px solid #CCCCCC;
+    border-radius: 4px;
+}
+
+.filtro-estado button {
+    background-color: #02403A;
+    color: #FFFFFF;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.filtro-estado button:hover {
+    background-color: #165953;
+}
+
 

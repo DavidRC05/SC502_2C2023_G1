@@ -89,7 +89,16 @@ if ($_SESSION['id_cargo'] != 1) {
                     <?php include 'get_citas_data.php' ?>
                 </div>
             </div>
+
+            <div>
+                <h2 class="text-center mb-3">Grafico de Citas</h2>
+                <div class="d-flex justify-content-center align-items-center mt-5">
+                    <canvas id="citaChart" width="450" height="350"></canvas>
+                </div>
+            </div>
+
             <script src="../../js/scriptGraficos.js"></script>
+            <script src="../../js/citagrafico.js"></script>
 
         </div>
         <!--Recordatorio investigar librerias para mostrar estadisticas de mysql-->
