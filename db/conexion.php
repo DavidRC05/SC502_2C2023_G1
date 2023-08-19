@@ -2,7 +2,7 @@
 
 //                      Servidor     User    Contraseña  Nombre de BD
 
-$conexion = new mysqli("localhost", "root", "root", "clinica");
+$conexion = new mysqli("localhost", "root", "Mathi2004!", "clinica");
 
 $conexion->set_charset("utf8");
 
@@ -13,5 +13,4 @@ if ($conexion->connect_errno) {
     // El método connect_error devuelve una descripción del último error de conexión.
     die("Error en la conexión: " . $conexion->connect_error);
 }
-
 ?>

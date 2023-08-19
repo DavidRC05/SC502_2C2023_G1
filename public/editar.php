@@ -135,7 +135,7 @@ if (isset($_POST['enviar'])) {
     <input type="hidden" name="cedula" value="<?php echo $id_cita; ?>">
     
     <input type="submit" name="enviar" value="Actualizar">
-    <a href="agendarCitasAdminitrador.php">Regresar</a>
+    <a href="admin/agendarCitasAdminitrador.php">Regresar</a>
 </form>
 </body>
 </html>

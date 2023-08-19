@@ -84,14 +84,14 @@ if ($_SESSION['id_cargo'] != 1) {
                 </div>
             </div>
             <div>
-                <h2 class="text-center mb-3">Grafico de Citas</h2>
+                <h2 class="text-center mb-3">Citas por Mes</h2>
                 <div class="d-flex justify-content-center align-items-center">
                     <?php include 'get_citas_data.php' ?>
                 </div>
             </div>
 
             <div>
-                <h2 class="text-center mb-3">Grafico de Citas</h2>
+                <h2 class="text-center mb-3">Estado de Citas</h2>
                 <div class="d-flex justify-content-center align-items-center mt-5">
                     <canvas id="citaChart" width="450" height="350"></canvas>
                 </div>

@@ -86,28 +86,28 @@ if ($_SESSION['id_cargo'] != 1) {
             </div>
 
             <div class="filtro-estado">
-    <form method="post" action="">
-        
-        <label for="estado">Filtrar por estado:</label>
-        <select name="Estado" id="estado">
-            <option value="todos">Todos</option>
-            <option value="Confirmado">Confirmado</option>
-            <option value="Por atender">Por atender</option>
-            <option value="Cancelado">Cancelado</option>
-        </select>
+                <form method="post" action="">
 
-        <label for="servicio">Filtrar por servicio:</label>
-        <select name="Servicio" id="servicio">
-            <option value="todos">Todos</option>
-            <option value="Rinomodelacion">Rinomodelacion</option>
-            <option value="Botox">Botox</option>
-            <option value="Cosmelan">Cosmelan</option>
-            <option value="Hydrofacial">Hydrofacial</option>
-        </select>
+                    <label for="estado">Filtrar por estado:</label>
+                    <select name="Estado" id="estado">
+                        <option value="todos">Todos</option>
+                        <option value="Confirmado">Confirmado</option>
+                        <option value="Por atender">Por atender</option>
+                        <option value="Cancelado">Cancelado</option>
+                    </select>
 
-        <button type="submit" class="button1">Filtrar</button>
-    </form>
-</div>
+                    <label for="servicio">Filtrar por servicio:</label>
+                    <select name="Servicio" id="servicio">
+                        <option value="todos">Todos</option>
+                        <option value="Rinomodelacion">Rinomodelacion</option>
+                        <option value="Botox">Botox</option>
+                        <option value="Cosmelan">Cosmelan</option>
+                        <option value="Hydrofacial">Hydrofacial</option>
+                    </select>
+
+                    <button type="submit" class="button1">Filtrar</button>
+                </form>
+            </div>
 
             <div class="container">
                 <h2>Citas Agendadas adminitrador</h2>
@@ -151,37 +151,37 @@ if ($_SESSION['id_cargo'] != 1) {
                     }
                 }
 
-                
+
 
                 // Resto del código PHP
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $filtro_estado = $_POST['Estado'];
                     $filtro_servicio = $_POST['Servicio'];
-                
+
                     $where_clause = "";
-                
+
                     if ($filtro_estado !== 'todos') {
                         $where_clause .= "Estado = '$filtro_estado' AND ";
                     }
-                
+
                     if (!empty($filtro_servicio) && $filtro_servicio !== 'todos') {
                         $where_clause .= "Servicio LIKE '%$filtro_servicio%' AND ";
                     }
-                
-                
+
+
                     // Eliminamos el "AND" adicional al final de la cláusula WHERE
                     if (!empty($where_clause)) {
                         $where_clause = "WHERE " . rtrim($where_clause, "AND ");
                     }
-                
+
                     $sql = "SELECT * FROM citas $where_clause;";
                 } else {
                     $sql = "SELECT * FROM citas;";
                 }
                 $result = mysqli_query($conexion, $sql);
-                
+
                 // Resto del código PHP para mostrar las citas
-                
+
 
                 if (mysqli_num_rows($result) > 0) {
                     while ($mostrar = mysqli_fetch_array($result)) {
@@ -198,14 +198,7 @@ if ($_SESSION['id_cargo'] != 1) {
 
 
                             <div class="cita-actions">
-
-                                
-
-
-
-
-                                <a href="../../fpdf/PruebaV.php?id_cita=<?php echo $mostrar['Cedula']; ?>" target="_blank" class="button generar-informe"><i class="fas fa-file-pdf"></i> Generar reporte</a>
-
+                                <a href="../../fpdf/PruebaV.php?id_cita=<?php echo $mostrar['Cedula']; ?>" class="button generar-informe"><i class="fas fa-file-pdf"></i> Generar reporte</a>
 
                                 <form method="post" action="">
 

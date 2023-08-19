@@ -40,62 +40,62 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
 
 <body>
     <main class="dashboard">
-            <div class="contenido-sidebar">
-                <?php if (!empty($_SESSION)) : ?>
-                    <div class="navbar-text fs-6 position-absolute top-0 end-0 sesion p-2 m-2">
-                        <?php echo $_SESSION['usuario']; ?>
-                        <i class="bi bi-person-fill"></i>
-                    </div>
-                <?php endif; ?>
-                <div class="contenedor-imagen-dash">
-                    <img class="imagen-dashboard" src="../../assets/images/gallery/Logo-dashboard.png" alt="" />
+        <div class="contenido-sidebar">
+            <?php if (!empty($_SESSION)) : ?>
+                <div class="navbar-text fs-6 position-absolute top-0 end-0 sesion p-2 m-2">
+                    <?php echo $_SESSION['usuario']; ?>
+                    <i class="bi bi-person-fill"></i>
                 </div>
-                <aside class="sidebar">
-                    <div class="enlace-sidebar">
-                        <a href="agendarCitasSec.php">Administracion de Citas</a>
-                    </div>
-                    <div class="enlace-sidebar">
-                        <a href="admin/calendario.php">Calendario</a>
-                    </div>
-                    <div class="enlace-sidebar">
-                        <a href="admin/promociones.php">Promociones</a>
-                    </div>
-                    <div class="enlace-sidebar">
-                        <a href="admin/reseñas.php">Reseñas</a>
-                    </div>
-                </aside>
-                <div class="dash-bajo">
-                    <a class="text-white" href="../../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
-                </div>
+            <?php endif; ?>
+            <div class="contenedor-imagen-dash">
+                <img class="imagen-dashboard" src="../../assets/images/gallery/Logo-dashboard.png" alt="" />
             </div>
-            <!--sidebar-->
-
-            <div class="contenido-principal">
-                <div class="agendar-cita-container">
-                    <a href="./agendarCitas.php" class="button agendar-cita">Agendar nueva cita</a>
+            <aside class="sidebar">
+                <div class="enlace-sidebar">
+                    <a href="agendarCitasSec.php">Administracion de Citas</a>
                 </div>
+                <div class="enlace-sidebar">
+                    <a href="admin/calendario.php">Calendario</a>
+                </div>
+                <div class="enlace-sidebar">
+                    <a href="admin/promociones.php">Promociones</a>
+                </div>
+                <div class="enlace-sidebar">
+                    <a href="admin/reseñas.php">Reseñas</a>
+                </div>
+            </aside>
+            <div class="dash-bajo">
+                <a class="text-white" href="../../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
+            </div>
+        </div>
+        <!--sidebar-->
+
+        <div class="contenido-principal">
+            <div class="agendar-cita-container">
+                <a href="./agendarCitas.php" class="button agendar-cita">Agendar nueva cita</a>
+            </div>
 
 
-                <div class="container">
-                    <h2>Citas Agendadas Secretaria</h2>
-                    <?php
-                    // Datos de conexión a la base de datos
-                    include '../db/conexion.php';
+            <div class="container">
+                <h2>Citas Agendadas Secretaria</h2>
+                <?php
+                // Datos de conexión a la base de datos
+                include '../db/conexion.php';
 
-                    // Verificar la conexión
-                    if ($conexion->connect_error) {
-                        die("Error de conexión: " . $conexion->connect_error);
-                    }
+                // Verificar la conexión
+                if ($conexion->connect_error) {
+                    die("Error de conexión: " . $conexion->connect_error);
+                }
 
-                    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar']) && isset($_POST['id_cita'])) {
-                        $id_cita = $_POST['id_cita'];
+                if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['eliminar']) && isset($_POST['id_cita'])) {
+                    $id_cita = $_POST['id_cita'];
 
-                        // Realizar la consulta para eliminar el registro
-                        $sql = "DELETE FROM citas WHERE Cedula = '$id_cita'";
-                        if (mysqli_query($conexion, $sql)) {
-                            // El registro se eliminó correctamente
-                            // Puedes mostrar una alerta con SweetAlert o redirigir a la página principal
-                            echo "<script>
+                    // Realizar la consulta para eliminar el registro
+                    $sql = "DELETE FROM citas WHERE Cedula = '$id_cita'";
+                    if (mysqli_query($conexion, $sql)) {
+                        // El registro se eliminó correctamente
+                        // Puedes mostrar una alerta con SweetAlert o redirigir a la página principal
+                        echo "<script>
                         Swal.fire({
                             title: 'Cita eliminada',
                             text: 'La cita ha sido eliminada correctamente.',
@@ -105,9 +105,9 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
                             window.location.href = 'angendarCitaSecretaria.php';
                         });
                     </script>";
-                        } else {
-                            // Si ocurre algún error al eliminar el registro, puedes mostrar un mensaje de error
-                            echo "<script>
+                    } else {
+                        // Si ocurre algún error al eliminar el registro, puedes mostrar un mensaje de error
+                        echo "<script>
                         Swal.fire({
                             title: 'Error',
                             text: 'Error al eliminar la cita. Inténtalo de nuevo más tarde.',
@@ -115,71 +115,71 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
                             confirmButtonText: 'Aceptar'
                         });
                     </script>";
-                        }
                     }
+                }
 
-                    $sql = "SELECT * FROM citas;";
-                    $result = mysqli_query($conexion, $sql);
-
-
-                    // Resto del código PHP
-
-                    if (mysqli_num_rows($result) > 0) {
-                        while ($mostrar = mysqli_fetch_array($result)) {
-                    ?>
-                            <div class="cita">
-                                <p><strong>Nombre:</strong> <?php echo $mostrar['Nombre']; ?></p>
-                                <p><strong>Apellidos:</strong> <?php echo $mostrar['Apellido']; ?></p>
-                                <p><strong>Cedula:</strong> <?php echo $mostrar['Cedula']; ?></p>
-                                <p><strong>Telefono:</strong> <?php echo $mostrar['Telefonos']; ?></p>
-                                <p><strong>Fecha y hora cita:</strong> <?php echo $mostrar['Fecha_y_hora']; ?></p>
-                                <p><strong>Servicio:</strong> <?php echo $mostrar['Servicio']; ?></p>
+                $sql = "SELECT * FROM citas;";
+                $result = mysqli_query($conexion, $sql);
 
 
+                // Resto del código PHP
 
-                                <div class="cita-actions">
-
-                                    <button class="button confirmar">Confirmar</button>
+                if (mysqli_num_rows($result) > 0) {
+                    while ($mostrar = mysqli_fetch_array($result)) {
+                ?>
+                        <div class="cita">
+                            <p><strong>Nombre:</strong> <?php echo $mostrar['Nombre']; ?></p>
+                            <p><strong>Apellidos:</strong> <?php echo $mostrar['Apellido']; ?></p>
+                            <p><strong>Cedula:</strong> <?php echo $mostrar['Cedula']; ?></p>
+                            <p><strong>Telefono:</strong> <?php echo $mostrar['Telefonos']; ?></p>
+                            <p><strong>Fecha y hora cita:</strong> <?php echo $mostrar['Fecha_y_hora']; ?></p>
+                            <p><strong>Servicio:</strong> <?php echo $mostrar['Servicio']; ?></p>
 
 
 
+                            <div class="cita-actions">
+
+                                <button class="button confirmar">Confirmar</button>
 
 
 
-                                    <form method="post" action="">
 
-                                        <input type="hidden" name="id_cita" value="<?php echo $mostrar['Cedula']; ?>">
-                                        <button type="submit" class="button eliminar" name="eliminar">Eliminar</button>
-                                        <a href="editarsecretaria.php?cedula=<?php echo $mostrar['Cedula']; ?>" class="button modificar">Modificar</a>
 
-                                    </form>
-                                </div>
+
+                                <form method="post" action="">
+
+                                    <input type="hidden" name="id_cita" value="<?php echo $mostrar['Cedula']; ?>">
+                                    <button type="submit" class="button eliminar" name="eliminar">Eliminar</button>
+                                    <a href="editarsecretaria.php?cedula=<?php echo $mostrar['Cedula']; ?>" class="button modificar">Modificar</a>
+
+                                </form>
                             </div>
+                        </div>
 
 
 
-                    <?php
-                        }
-                    } else {
-                        echo "No hay datos para mostrar.";
+                <?php
                     }
+                } else {
+                    echo "No hay datos para mostrar.";
+                }
 
-                    // Cierra la conexión a la base de datos
-                    mysqli_close($conexion);
-                    ?>
-
-                </div>
-                <div class="form-group">
-                    <a href="../index.php" class="button">Volver al menú principal</a>
-
-                </div>
-
-
-                <script src="../js/scriptCitasAdminitrador.js"></script>
-
+                // Cierra la conexión a la base de datos
+                mysqli_close($conexion);
+                ?>
 
             </div>
-            <!--contenido-->
+            <div class="form-group">
+                <a href="../index.php" class="button">Volver al menú principal</a>
+
+            </div>
+
+
+            <script src="../js/scriptCitasAdminitrador.js"></script>
+
+
+        </div>
+        <!--contenido-->
     </main>
 </body>
 

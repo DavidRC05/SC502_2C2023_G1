@@ -49,22 +49,7 @@ function mostrarConfirmacion(mensaje) {
     });
   }
   
-  // Función para mostrar una alerta de modificación
-  function mostrarModificacion(mensaje) {
-    Swal.fire({
-      title: "Modificación",
-      text: mensaje,
-      icon: "info",
-      showCancelButton: true,
-      confirmButtonText: "Sí",
-      cancelButtonText: "No"
-    }).then((result) => {
-      if (result.isConfirmed) {
-        // Acción a realizar si se confirma la modificación
-        Swal.fire("¡Modificada!", "La cita ha sido modificada.", "success");
-      }
-    });
-  }
+
   
   // Función para mostrar una alerta de generación de informe
   function mostrarInforme(mensaje) {
@@ -105,7 +90,7 @@ function mostrarConfirmacion(mensaje) {
   const cancelarBotones = document.querySelectorAll(".cancelar");
   const reprogramarBotones = document.querySelectorAll(".reprogramar");
   const modificarBotones = document.querySelectorAll(".modificar");
-  const generarInformeBotones = document.querySelectorAll(".generar-informe");
+
   const eliminarBotones = document.querySelectorAll(".eliminar");
   
   // Agregar eventos de clic a los botones
@@ -133,11 +118,35 @@ function mostrarConfirmacion(mensaje) {
     });
   });
   
+    // Obtiene todos los botones y agrega el evento click
+  const generarInformeBotones = document.querySelectorAll(".generar-informe");
   generarInformeBotones.forEach((boton) => {
-    boton.addEventListener("click", () => {
-      mostrarInforme("¿Estás seguro de que deseas generar un informe para esta cita?");
+    boton.addEventListener("click", (event) => {
+      event.preventDefault(); // Evita que el enlace se abra de inmediato
+      const url = boton.getAttribute("href"); // Obtiene el atributo href del enlace
+      mostrarInforme("¿Estás seguro de que deseas generar un informe para esta cita?", url);
     });
   });
+
+  // Agrega SweetAlert
+  function mostrarInforme(mensaje, url) {
+    return Swal.fire({
+      title: "Generar Informe",
+      text: mensaje,
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonText: "Sí, generar",
+      cancelButtonText: "Cancelar",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        // Si el usuario confirma, redirige al enlace del informe
+        window.location.href = url;
+      }
+    });
+  }
+
+
+
   
   eliminarBotones.forEach((boton) => {
     boton.addEventListener("click", () => {
