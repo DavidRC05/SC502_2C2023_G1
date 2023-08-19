@@ -52,7 +52,7 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
                 </div>
                 <aside class="sidebar">
                     <div class="enlace-sidebar">
-                        <a href="agendarCitasSec.php">Administracion de Citas</a>
+                        <a href="admin/agendarCitasAdminitrador.php">Administracion de Citas</a>
                     </div>
                     <div class="enlace-sidebar">
                         <a href="admin/calendario.php">Calendario</a>

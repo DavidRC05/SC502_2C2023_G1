@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['id_cargo'] != 1) {
+if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
     function ocultarPagina()
     {
         header("Location: about:blank");
@@ -54,25 +54,34 @@ if ($_SESSION['id_cargo'] != 1) {
                 <img class="imagen-dashboard" src="../../assets/images/gallery/Logo-dashboard.png" alt="" />
             </div>
             <aside class="sidebar">
-                <div class="enlace-sidebar">
-                    <a href="agendarCitasAdminitrador.php">Administracion de Citas</a>
-                </div>
+                <?php if ($_SESSION['id_cargo'] == 3) : ?>
+                    <div class="enlace-sidebar">
+                        <a href="../agendarCitasSec.php">Administracion de Citas</a>
+                    </div>
+                <?php else : ?>
+                    <div class="enlace-sidebar">
+                        <a href="agendarCitasAdminitrador.php">Administracion de Citas</a>
+                    </div>
+                <?php endif; ?>
                 <div class="enlace-sidebar">
                     <a href="calendario.php">Calendario</a>
                 </div>
-                <div class="enlace-sidebar">
-                    <a href="estadisticas.php">Estadisticas</a>
-                </div>
+                <?php if ($_SESSION['id_cargo'] == 1) : ?>
+                    <div class="enlace-sidebar">
+                        <a href="estadisticas.php">Estadisticas</a>
+                    </div>
+                <?php endif; ?>
                 <div class="enlace-sidebar">
                     <a href="promociones.php">Promociones</a>
                 </div>
                 <div class="enlace-sidebar">
                     <a href="reseñas.php">Reseñas</a>
                 </div>
-                <div class="enlace-sidebar">
-                    <a href="curriculums.php">Aplicaciones a Trabajo</a>
-                </div>
-
+                <?php if ($_SESSION['id_cargo'] == 1) : ?>
+                    <div class="enlace-sidebar">
+                        <a href="curriculums.php">Aplicaciones a Trabajo</a>
+                    </div>
+                <?php endif; ?>
             </aside>
             <div class="dash-bajo">
                 <a class="text-white" href="../../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
@@ -223,10 +232,6 @@ if ($_SESSION['id_cargo'] != 1) {
                 // Cierra la conexión a la base de datos
                 mysqli_close($conexion);
                 ?>
-
-            </div>
-            <div class="form-group">
-                <a href="../../index.php" class="button">Volver al menú principal</a>
 
             </div>
 
