@@ -35,6 +35,8 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/3.9.0/fullcalendar.min.css" rel="stylesheet" />
 
     <link rel="stylesheet" href="../../css/dashboard.css" />
+
+    <link rel="stylesheet" href="../../css/calendario.css" />
 </head>
 
 <body>
@@ -85,9 +87,19 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
         </div>
         <!--sidebar-->
 
-        <div class="contenido-principal">
+        <div class="contenido-principal mt-5">
 
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 mx-auto">
+                        <div id="calendar"></div>
+                    </div>
+                </div>
+            </div>
 
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/4.2.0/locale/es.js"></script>
+            <script src=" https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js "></script>
+            <script src="../../js/calendario.js"></script>
         </div>
 
 
@@ -104,8 +116,7 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.18/dist/sweetalert2.min.js"></script>
 <!-- JS for jQuery -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<!-- JS for full calender -->
-<script src=" https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js "></script>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
 
 </html>

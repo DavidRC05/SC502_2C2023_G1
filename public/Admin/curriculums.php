@@ -84,7 +84,6 @@ if ($_SESSION['id_cargo'] != 1) {
                         <tr>
                             <th>Nombre del Usuario</th>
                             <th>Nombre del Archivo</th>
-                            <th>Tipo de Archivo</th>
                             <th>Ver CV</th>
                             <th>Eliminar</th>
 
@@ -108,7 +107,6 @@ if ($_SESSION['id_cargo'] != 1) {
                                     echo '<tr>';
                                     echo '<td>' . $row['nombre'] . '</td>';
                                     echo '<td>' . $row['nombre_archivo'] . '</td>';
-                                    echo '<td>' . $row['tipo_archivo'] . '</td>';
                                     echo '<td>';
                                     echo '<a href="../../../controllers/descargar_cv.php?archivo=' . urlencode($row['nombre_archivo']) . '" class="btn btn-primary btn-sm">Descargar CV</a>';
                                     echo '</td>';

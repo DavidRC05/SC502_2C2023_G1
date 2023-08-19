@@ -125,6 +125,23 @@ session_start();
                     echo '</div>';
                     echo '</div>';
                     break;
+                  case 3:
+                    echo '<div class="dropdown show navbar-text fs-6 position-absolute top-0 end-0 me-3">';
+                    echo '<a class="btn btn-secondary me-3 ingresar text-white dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">';
+                    echo $_SESSION['usuario'];
+                    echo '<i class="bi bi-person-fill"></i>';
+                    echo '</a>';
+
+                    echo '<div class="dropdown-menu desplegar pe-2" aria-labelledby="dropdownMenuLink">';
+                    echo '<div class="contenedor__texto">';
+                    echo '<a class="text-white text-center desplegar__letra" href="public/dashboard_sec.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
+                    echo '</div>';
+                    echo '<div class="contenedor__texto">';
+                    echo '<a class="text-white text-center desplegar__letra" href="controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';
+                    echo '</div>';
+                    echo '</div>';
+                    echo '</div>';
+                    break;
                 }
               }
               ?>
@@ -162,9 +179,9 @@ session_start();
               </div>
 
               <div class="form-group">
-    <label for="datetime">Fecha y Hora de cita:</label>
-    <input type="datetime-local" id="datetime" name="datetime" class="form-control" required>
-</div>
+                <label for="datetime">Fecha y Hora de cita:</label>
+                <input type="datetime-local" id="datetime" name="datetime" class="form-control" required>
+              </div>
 
               <div class="form-group">
                 <label for="service">Servicio:</label>
@@ -226,7 +243,7 @@ include '../db/conexion.php';
 
 // Verificar la conexión
 if ($conexion->connect_error) {
-    die("Error de conexión: " . $conexion->connect_error);
+  die("Error de conexión: " . $conexion->connect_error);
 }
 
 
@@ -235,74 +252,69 @@ if ($conexion->connect_error) {
 // Función para verificar si una cadena contiene solo letras y espacios
 function esSoloLetras($cadena)
 {
-    return preg_match('/^[A-Za-z ]+$/', $cadena);
+  return preg_match('/^[A-Za-z ]+$/', $cadena);
 }
 
 // Función para verificar si una cadena contiene solo números
 function esSoloNumeros($cadena)
 {
-    return is_numeric($cadena);
+  return is_numeric($cadena);
 }
 
 // Verificar si se ha enviado el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $nombre = $_POST['name'] ?? '';
-    $apellido = $_POST['last-name'] ?? '';
-    $cedula = $_POST['cedula'] ?? '';
-    $telefonos = $_POST['phone'] ?? '';
-    $fechaHora = $_POST['datetime'] ?? '';
-    $servicio = $_POST['service'] ?? '';
+  $nombre = $_POST['name'] ?? '';
+  $apellido = $_POST['last-name'] ?? '';
+  $cedula = $_POST['cedula'] ?? '';
+  $telefonos = $_POST['phone'] ?? '';
+  $fechaHora = $_POST['datetime'] ?? '';
+  $servicio = $_POST['service'] ?? '';
 
-    // Validar nombre y apellido: Permitir solo letras y espacios
-    if (!esSoloLetras($nombre) || !esSoloLetras($apellido)) {
-        echo "Por favor, ingresa solo letras y espacios en el nombre y apellido.";
-        echo '<script>
+  // Validar nombre y apellido: Permitir solo letras y espacios
+  if (!esSoloLetras($nombre) || !esSoloLetras($apellido)) {
+    echo "Por favor, ingresa solo letras y espacios en el nombre y apellido.";
+    echo '<script>
         alert("Por favor, ingresa solo letras y espacios en el nombre y apellido.");
         window.location.href = "agendarCitas.php";
       </script>';
-    }
-    // Validar cedula y telefono: Permitir solo números
-    elseif (!esSoloNumeros($cedula) || !esSoloNumeros($telefonos)) {
-        
-        echo '<script>
+  }
+  // Validar cedula y telefono: Permitir solo números
+  elseif (!esSoloNumeros($cedula) || !esSoloNumeros($telefonos)) {
+
+    echo '<script>
         alert("Por favor, ingresa solo números en la cédula y teléfono.");
         window.location.href = "agendarCitas.php";
       </script>';
-    } else {
-        // Verificar si la fecha y hora de la cita ya existe en la base de datos
-        $consulta = "SELECT * FROM citas WHERE Fecha_y_hora = '$fechaHora'";
-        $result = $conexion->query($consulta);
+  } else {
+    // Verificar si la fecha y hora de la cita ya existe en la base de datos
+    $consulta = "SELECT * FROM citas WHERE Fecha_y_hora = '$fechaHora'";
+    $result = $conexion->query($consulta);
 
-        if ($result->num_rows > 0) {
-            // La fecha y hora de la cita ya está ocupada
-            echo '<script>
+    if ($result->num_rows > 0) {
+      // La fecha y hora de la cita ya está ocupada
+      echo '<script>
         alert("La fecha ya esta ocupada selecione otra fecha.");
         window.location.href = "agendarCitas.php";
       </script>';
-        } else {
-            // Insertar la cita en la base de datos
-            $sql = "INSERT INTO citas (Nombre, Apellido, Cedula, Telefonos, Fecha_y_hora, Servicio)
+    } else {
+      // Insertar la cita en la base de datos
+      $sql = "INSERT INTO citas (Nombre, Apellido, Cedula, Telefonos, Fecha_y_hora, Servicio)
                 VALUES ('$nombre', '$apellido', '$cedula', '$telefonos', '$fechaHora', '$servicio')";
-if ($conexion->query($sql) === TRUE) {
-  // Cita agendada con éxito, mostrar mensaje y redirigir con JavaScript
-  echo '<script>
+      if ($conexion->query($sql) === TRUE) {
+        // Cita agendada con éxito, mostrar mensaje y redirigir con JavaScript
+        echo '<script>
         alert("Cita agendada con éxito.");
         window.location.href = "agendarCitas.php";
       </script>';
-} else {
-  // Error al agendar la cita
-  echo "Error al agendar la cita: " . $conexion->error;
-}
-        }
+      } else {
+        // Error al agendar la cita
+        echo "Error al agendar la cita: " . $conexion->error;
+      }
     }
+  }
 }
 
 // Cerrar la conexión a la base de datos
 $conexion->close();
 
 ?>
-
-
-
-
-

@@ -1,0 +1,8 @@
+/* Definir una clase CSS personalizada para eventos */
+.eventos-calendar {
+    background-color: #165953;
+    border-color: #000;
+    color: #ffff;
+    font-size: 10px;
+  }
+  
