@@ -162,9 +162,9 @@ session_start();
               </div>
 
               <div class="form-group">
-                <label for="datetime">Fecha y Hora de cita:</label>
-                <input type="datetime-local" id="datetime" name="datetime" class="form-control" required>
-              </div>
+    <label for="datetime">Fecha y Hora de cita:</label>
+    <input type="datetime-local" id="datetime" name="datetime" class="form-control" required>
+</div>
 
               <div class="form-group">
                 <label for="service">Servicio:</label>

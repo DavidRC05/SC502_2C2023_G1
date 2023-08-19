@@ -164,8 +164,8 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
 
                 // Resto del código PHP
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                    $filtro_estado = $_POST['Estado'];
-                    $filtro_servicio = $_POST['Servicio'];
+                    $filtro_estado = isset($_POST['Estado']) ? $_POST['Estado'] : 'todos';
+                    $filtro_servicio = isset($_POST['Servicio']) ? $_POST['Servicio'] : 'todos';
 
                     $where_clause = "";
 
