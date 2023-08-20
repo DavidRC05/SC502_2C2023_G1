@@ -34,6 +34,7 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="./../css/dashboard.css" />
     <link rel="stylesheet" href="../css/styleCitasSecretaria.css" />
 </head>
@@ -102,7 +103,7 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
                             icon: 'success',
                             confirmButtonText: 'Aceptar'
                         }).then(() => {
-                            window.location.href = 'angendarCitaSecretaria.php';
+                            window.location.href = 'agendarCitasSec.php';
                         });
                     </script>";
                     } else {

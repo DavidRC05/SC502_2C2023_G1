@@ -119,7 +119,7 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
             </div>
 
             <div class="container">
-                <h2>Citas Agendadas adminitrador</h2>
+                <h2>Citas Agendadas administrador</h2>
                 <?php
                 // Datos de conexión a la base de datos
                 include '../../db/conexion.php';

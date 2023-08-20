@@ -144,12 +144,3 @@ function mostrarConfirmacion(mensaje) {
       }
     });
   }
-
-
-
-  
-  eliminarBotones.forEach((boton) => {
-    boton.addEventListener("click", () => {
-      mostrarEliminacion("¿Estás seguro de que deseas eliminar esta cita?");
-    });
-  });
