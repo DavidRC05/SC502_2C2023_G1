@@ -134,7 +134,7 @@ session_start();
 
                     echo '<div class="dropdown-menu desplegar pe-2" aria-labelledby="dropdownMenuLink">';
                     echo '<div class="contenedor__texto">';
-                    echo '<a class="text-white text-center desplegar__letra" href="public/dashboard_sec.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
+                    echo '<a class="text-white text-center desplegar__letra" href="dashboard_sec.php"><i class="bi bi-file-bar-graph"></i>Administrar</a> <br>';
                     echo '</div>';
                     echo '<div class="contenedor__texto">';
                     echo '<a class="text-white text-center desplegar__letra" href="controllers/controlador_cerrar_sesion.php"><i class="bi bi-arrow-bar-left"></i>Cerrar Sesión</a>';

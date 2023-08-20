@@ -82,7 +82,7 @@
         $sql = "UPDATE citas SET Nombre='$nombre', Apellido='$apellido', Telefonos='$telefonos', Fecha_y_hora='$fecha_y_hora', Servicio='$servicio', Estado='$estado' WHERE Cedula='$cedula'";
         if (mysqli_query($conexion, $sql)) {
             // Redirigir a la página principal después de la actualización
-            header("Location: .../SC502_2C2023_G1/public/agendarCitasSec.php");
+            header("Location: agendarCitasSec.php");
             exit();
         } else {
             echo "Error al actualizar los datos: " . mysqli_error($conexion);
@@ -143,7 +143,7 @@
             <input type="hidden" name="cedula" value="<?php echo $id_cita; ?>">
 
             <input type="submit" name="enviar" value="Actualizar">
-            <a href=".../SC502_2C2023_G1/public/agendarCitasSec.php" class="text-decoration-none text-white">Regresar</a>
+            <a href="agendarCitasSec.php" class="text-decoration-none text-white">Regresar</a>
         </div>
     </form>
 </body>
