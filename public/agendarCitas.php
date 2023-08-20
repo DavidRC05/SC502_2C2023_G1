@@ -43,15 +43,15 @@ session_start();
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav mx-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#hero">Inicio</a>
+                <a class="nav-link" href="../index.php">Inicio</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#about">Sobre Nosotros</a>
+                <a class="nav-link" href="../index.php#about">Sobre Nosotros</a>
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#services">Servicios</a>
+                <a class="nav-link" href="../index.php#services">Servicios</a>
               </li>
 
               <?php if (!empty($_SESSION)) : ?>
@@ -60,7 +60,7 @@ session_start();
               <?php endif; ?>
 
               <li class="nav-item">
-                <a class="nav-link" href="#reviews">Testimonios</a>
+                <a class="nav-link" href="../index.php#testimonios">Testimonios</a>
               </li>
 
               <?php if (empty($_SESSION)) : ?>
@@ -73,7 +73,7 @@ session_start();
               </li>
 
               <li class="nav-item">
-                <a class="nav-link" href="#contact">Contacto</a>
+                <a class="nav-link" href="../index.php#contact">Contacto</a>
               </li>
 
               <?php if (empty($_SESSION)) : ?>

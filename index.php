@@ -50,7 +50,7 @@ include 'db/conexion.php';
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav mx-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" href="../index.php">Inicio</a>
+                            <a class="nav-link" href="./index.php">Inicio</a>
                         </li>
 
                         <li class="nav-item">
@@ -62,7 +62,7 @@ include 'db/conexion.php';
                         </li>
 
                         <?php if (!empty($_SESSION)) : ?>
-                            <a class="navbar-brand d-none d-lg-block" href="../index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
+                            <a class="navbar-brand d-none d-lg-block" href="./index.php">Clinic Care<strong class="d-block">Expertos en Estetica</strong>
                             </a>
                         <?php endif; ?>
 
