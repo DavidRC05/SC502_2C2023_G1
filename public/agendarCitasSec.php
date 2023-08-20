@@ -34,7 +34,7 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.min.css" />
-    <link rel="stylesheet" href="../../css/dashboard.css" />
+    <link rel="stylesheet" href="./../css/dashboard.css" />
     <link rel="stylesheet" href="../css/styleCitasSecretaria.css" />
 </head>
 
@@ -65,7 +65,7 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
                 </div>
             </aside>
             <div class="dash-bajo">
-                <a class="text-white" href="../../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
+                <a class="text-white" href="../index.php">Salir <i class="bi bi-box-arrow-right text-white"></i></a>
             </div>
         </div>
         <!--sidebar-->
@@ -134,12 +134,13 @@ if ($_SESSION['id_cargo'] != 3 && 1) {
                             <p><strong>Telefono:</strong> <?php echo $mostrar['Telefonos']; ?></p>
                             <p><strong>Fecha y hora cita:</strong> <?php echo $mostrar['Fecha_y_hora']; ?></p>
                             <p><strong>Servicio:</strong> <?php echo $mostrar['Servicio']; ?></p>
+                            <p><strong>Estado:</strong> <?php echo $mostrar['Estado']; ?></p>
 
 
 
                             <div class="cita-actions">
 
-                                <button class="button confirmar">Confirmar</button>
+                                
 
 
 
