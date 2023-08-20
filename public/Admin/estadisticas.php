@@ -106,7 +106,7 @@ if ($_SESSION['id_cargo'] != 1) {
             <div>
                 <h2 class="text-center mb-3">Promedio De Estrellas</h2>
                 <div class="d-flex justify-content-center align-items-center mt-5">
-                <?php include 'get_ratings_data.php' ?>
+                <?php include 'get_estrellas_data.php' ?>
                 </div>
             </div>
 
