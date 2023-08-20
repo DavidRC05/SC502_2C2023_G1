@@ -68,6 +68,7 @@ if ($_SESSION['id_cargo'] != 1) {
                 <div class="enlace-sidebar">
                     <a href="curriculums.php">Aplicaciones a Trabajo</a>
                 </div>
+                
 
             </aside>
             <div class="dash-bajo">
@@ -100,6 +101,12 @@ if ($_SESSION['id_cargo'] != 1) {
                 <h2 class="text-center mb-3">Citas por Servicio</h2>
                 <div class="d-flex justify-content-center align-items-center mt-5">
                     <?php include 'citas_por_servicio.php' ?>
+                </div>
+            </div>
+            <div>
+                <h2 class="text-center mb-3">Promedio De Estrellas</h2>
+                <div class="d-flex justify-content-center align-items-center mt-5">
+                <?php include 'get_ratings_data.php' ?>
                 </div>
             </div>
 
