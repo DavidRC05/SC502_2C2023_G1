@@ -96,6 +96,12 @@ if ($_SESSION['id_cargo'] != 1) {
                     <canvas id="citaChart" width="450" height="350"></canvas>
                 </div>
             </div>
+            <div>
+                <h2 class="text-center mb-3">Citas por Servicio</h2>
+                <div class="d-flex justify-content-center align-items-center mt-5">
+                    <?php include 'citas_por_servicio.php' ?>
+                </div>
+            </div>
 
             <script src="../../js/scriptGraficos.js"></script>
             <script src="../../js/citagrafico.js"></script>
