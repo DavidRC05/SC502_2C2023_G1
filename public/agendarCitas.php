@@ -69,7 +69,7 @@ session_start();
               <?php endif; ?>
 
               <li class="nav-item">
-                <a class="nav-link" href="agendarCitas.php">Agendar Cita</a>
+                <a class="nav-link" href="./agendarCitas.php">Agendar Cita</a>
               </li>
 
               <li class="nav-item">
