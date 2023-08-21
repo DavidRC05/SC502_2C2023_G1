@@ -148,9 +148,9 @@ session_start();
         <section id="description">
             <div class="col-lg-8 col-12 mx-auto">
                 <h4 class="titulod">Recepcionista</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                    rerum aspernatur quaerat. Quidem unde quo esse voluptate.
-                    Exercitationem totam iusto doloribus impedit dolor laborios</p>
+                <p>En esta emocionante posición de Recepcionista, serás la primera impresión de nuestra clinica. 
+                    Serás responsable de recibir a los visitantes, atender llamadas y coordinar citas. 
+                    Tu actitud amigable y profesional será fundamental para crear una experiencia positiva para nuestros clientes.</p>
 
                 <h6 class="td">Requisitos</h6>
                 <ul>

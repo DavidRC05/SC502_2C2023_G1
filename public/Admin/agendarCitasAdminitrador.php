@@ -207,7 +207,7 @@ if ($_SESSION['id_cargo'] != 1 && $_SESSION['id_cargo'] != 3) {
 
 
                             <div class="cita-actions">
-                                <a href="../../fpdf/PruebaV.php?id_cita=<?php echo $mostrar['Cedula']; ?>" class="button generar-informe"><i class="fas fa-file-pdf"></i> Generar reporte</a>
+                                <a href="../../fpdf/PruebaV.php?id_cita=<?php echo $mostrar['Cedula']; ?>" target="_blank" class="button generar-informe"><i class="fas fa-file-pdf"></i> Generar reporte</a>
 
                                 <form method="post" action="">
 

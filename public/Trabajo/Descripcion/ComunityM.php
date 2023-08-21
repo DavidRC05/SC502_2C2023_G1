@@ -148,20 +148,20 @@ session_start();
         <section id="description">
             <div class="col-lg-8 col-12 mx-auto">
                 <h4 class="titulod">Community Manager</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                    rerum aspernatur quaerat. Quidem unde quo esse voluptate.
-                    Exercitationem totam iusto doloribus impedit dolor laborios</p>
+                <p>Únete a nuestro equipo como Community Manager y lidera nuestra presencia en línea.
+                    Serás responsable de construir y mantener relaciones significativas con nuestra comunidad en redes sociales.
+                    Tu creatividad y habilidades de comunicación serán clave para promover nuestra clínica estética y fortalecer nuestra marca.</p>
 
                 <h6 class="td">Requisitos</h6>
                 <ul>
                     <li>
-                        Bachillerato
+                        Experiencia demostrable en gestión de redes sociales.
                     </li>
                     <li>
-                        Uso de Office
+                        Creatividad para desarrollar contenido atractivo.
                     </li>
                     <li>
-                        Ingles
+                        Conocimiento de estrategias de marketing digital.
                     </li>
                 </ul>
                 <?php

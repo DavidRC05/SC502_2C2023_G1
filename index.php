@@ -288,29 +288,29 @@ include 'db/conexion.php';
                         <div class="service">
                             <img src="./assets/images/servicios/rinomodelacion.jpg" alt="Servicio Rinomodelación">
                             <h3 style="color: #02403A;">Rinomodelación</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
-                                saepe esse accusantium.</p>
+                            <p>Resalta tu nariz con rinomodelación. Resultados rápidos y naturales. 
+                                Desde ₡200,000.</p>
                             <a class="custom-link" href="public/agendarCitas.php" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/cosmelan-clinic.jpg" alt="Servicio Cosmelan">
                             <h3 style="color: #02403A;">Cosmelan</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
-                                saepe esse accusantium.</p>
+                            <p>Despídete de las manchas con el tratamiento Cosmelan.
+                                 Piel renovada y uniforme. Desde ₡150,000.</p>
                             <a class="custom-link" href="public/agendarCitas.php" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/Botox.jpg" alt="Servicio Botox">
                             <h3 style="color: #02403A;">Botox</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
-                                saepe esse accusantium.</p>
+                            <p>Revitaliza tu rostro con Botox. Reducción de arrugas y líneas de expresión.
+                                 Tratamiento desde ₡150,000.</p>
                             <a class="custom-link" href="public/agendarCitas.php" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
                         <div class="service">
                             <img src="./assets/images/servicios/hydrafacial-treatment.webp" alt="Servicio Hydrafacial">
                             <h3 style="color: #02403A;">Hydrafacial</h3>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, officiis rerum amet
-                                saepe esse accusantium.</p>
+                            <p>Logra una piel radiante con Hydrafacial. Limpieza profunda y rejuvenecimiento. 
+                                Sesiones desde ₡180,000.</p>
                             <a class="custom-link" href="public/agendarCitas.php" data-hover="Agendar" style="margin-top: 10px;">Agendar</a>
                         </div>
 

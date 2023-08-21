@@ -148,9 +148,9 @@ session_start();
         <section id="description">
             <div class="col-lg-8 col-12 mx-auto h-100">
                 <h4 class="titulod">Asistente</h4>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-                    rerum aspernatur quaerat. Quidem unde quo esse voluptate.
-                    Exercitationem totam iusto doloribus impedit dolor laborios</p>
+                <p>Únete a nuestro equipo como Asistente en nuestra prestigiosa clínica estética.
+                    Serás fundamental para garantizar la eficiencia y calidad de nuestros servicios.
+                    Colaborarás estrechamente con el personal médico y administrativo para brindar un entorno positivo y cuidadoso para nuestros pacientes.</p>
 
                 <h6 class="td">Requisitos</h6>
                 <ul>
@@ -158,7 +158,7 @@ session_start();
                         Bachillerato
                     </li>
                     <li>
-                        Uso de Office
+                        Experiencia previa en clínicas estéticas (preferible, pero no obligatoria).
                     </li>
                     <li>
                         Ingles

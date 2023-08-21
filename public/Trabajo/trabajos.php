@@ -157,9 +157,8 @@ session_start();
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Recepcionista</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk of the card's content.</p>
+                                    <p class="card-text">¡Únete a nuestro equipo como Recepcionista! Valoramos tu experiencia. 
+                                        Ofrecemos salario competitivo y un entorno laboral gratificante. Aplica hoy mismo.</p>
                                     <div class="d-flex justify-content-center">
                                         <a href="Descripcion/recepcionista.php" class="btn-trabajos alt ">Aplicar</a>
                                     </div>
@@ -172,9 +171,8 @@ session_start();
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Asistente</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk of the card's content.</p>
+                                    <p class="card-text">Vacante de Asistente Disponible: Únete a nuestro equipo como Asistente. Excelente oportunidad para crecer. 
+                                        Ambiente de trabajo gratificante. ¡Aplica ahora!</p>
                                     <div class="d-flex justify-content-center">
                                         <a href="Descripcion/asistente.php" class="btn-trabajos">Aplicar</a>
                                     </div>
@@ -187,9 +185,8 @@ session_start();
                                 </div>
                                 <div class="card-body">
                                     <h5 class="card-title">Community Manager</h5>
-                                    <p class="card-text">Some quick example text to build on the card title and make up
-                                        the
-                                        bulk of the card's content.</p>
+                                    <p class="card-text">Únete a nosotros como Community Manager. Crea conexiones impactantes en línea. 
+                                        Ofrecemos salario competitivo y un entorno laboral gratificante. ¡Aplica hoy!</p>
                                     <div class="d-flex justify-content-center">
                                         <a href="Descripcion/ComunityM.php" class="btn-trabajos">Aplicar</a>
                                     </div>
